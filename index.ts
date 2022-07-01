@@ -4,6 +4,16 @@ import { readFile, writeFile } from "fs/promises";
 import { resolve } from "path";
 import { JSDOM } from 'jsdom';
 
+getData();
+
+async function getData() {
+    const document = await fetchFromWebOrCache('https://dbz-dokkanbattle.fandom.com/wiki/Category:LR', false);
+    const links = extractLinks(document);
+    saveData('LR-links', links)
+    const charactersData = extractCharactersData(links)
+}
+
+
 function fetchPage(url: string): Promise<string | undefined> {
     const HTMLData = axios.get(url)
         .then(res => res.data)
@@ -21,14 +31,14 @@ async function fetchFromWebOrCache(url: string, ignoreCache = false) {
     }
     console.log(`Getting data for ${url}...`);
 
+    const fileName = resolve(__dirname, `.cache/${Buffer.from(url).toString('base64')}.html`)
+
     if (!ignoreCache &&
-        existsSync(
-            resolve(__dirname, `.cache/${Buffer.from(url).toString('base64')}.html`),
-        )
+        existsSync(fileName,)
     ) {
         console.log(`I read ${url} from cache`);
         const HTMLData = await readFile(
-            resolve(__dirname, `.cache/${Buffer.from(url).toString('base64')}.html`),
+            fileName,
             { encoding: 'utf8' }
         );
         const dom = new JSDOM(HTMLData);
@@ -38,15 +48,13 @@ async function fetchFromWebOrCache(url: string, ignoreCache = false) {
         const HTMLData = await fetchPage(url);
         if (!ignoreCache && HTMLData) {
             writeFile(
-                resolve(__dirname, `.cache/${Buffer.from(url).toString('base64')}.html`,
-                ),
+                fileName,
                 HTMLData, { encoding: 'utf8' },
             );
         }
         const dom = new JSDOM(HTMLData);
         return dom.window.document;
     }
-
 }
 
 function extractLinks(document: Document) {
@@ -66,10 +74,11 @@ function saveData(fileName: string, data: unknown) {
         { encoding: 'utf8' })
 }
 
-async function getData() {
-    const document = await fetchFromWebOrCache('https://dbz-dokkanbattle.fandom.com/wiki/Category:LR', false);
-    const data = extractLinks(document);
-    saveData('LR-links', data)
+function extractCharactersData(links: string[]) {
+    links.forEach(link => {
+        extractCharacterData(link)
+    });
 }
-
-getData();
+function extractCharacterData(link: string) {
+    fetchFromWebOrCache(link, false)
+}
