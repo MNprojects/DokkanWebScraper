@@ -10,12 +10,13 @@ async function getDokkanData() {
     const document: Document = await fetchFromWebOrCache('https://dbz-dokkanbattle.fandom.com/wiki/Category:LR', false);
     const links: string[] = extractLinks(document);
     saveData('LR-links', links)
+ 
+    const charactersData = await Promise.all(links.map(async link => {
+        const characterDocument: Document = await fetchFromWebOrCache(link)
+        return extractCharacterData(characterDocument)
+    }))
 
-    const characterDocument: Document = await fetchFromWebOrCache(links[0])
-    const characterData = extractCharacterData(characterDocument);
-    saveData('LR-characters', characterData)
-
-
+    saveData('LR-characters', charactersData)
 }
 
 
@@ -124,7 +125,7 @@ function extractCharacterData(characterDocument: Document) {
         KiMultiplier: characterDocument.querySelector('.righttablecard > table:nth-child(6) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1)')?.textContent,
 
     }
-    console.log(characterData);
+    // console.log(characterData);
     return characterData
 
 }
