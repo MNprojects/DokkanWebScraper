@@ -10,13 +10,18 @@ async function getDokkanData() {
     const document: Document = await fetchFromWebOrCache('https://dbz-dokkanbattle.fandom.com/wiki/Category:LR', false);
     const links: string[] = extractLinks(document);
     saveData('LR-links', links)
+    const characterDocument: Document = await fetchFromWebOrCache(links[1])
+    // console.log(links[1]);
+    const data = extractCharacterData(characterDocument)
+    // console.log(data);
+    
  
-    const charactersData = await Promise.all(links.map(async link => {
-        const characterDocument: Document = await fetchFromWebOrCache(link)
-        return extractCharacterData(characterDocument)
-    }))
+    // const charactersData = await Promise.all(links.map(async link => {
+    //     const characterDocument: Document = await fetchFromWebOrCache(link)
+    //     return extractCharacterData(characterDocument)
+    // }))
 
-    saveData('LR-characters', charactersData)
+    // saveData('LR-characters', charactersData)
 }
 
 
@@ -106,7 +111,7 @@ function extractCharacterData(characterDocument: Document) {
         LeaderSkill: characterDocument.querySelector('.righttablecard > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1)')?.textContent,
         SuperAttack: characterDocument.querySelector('.righttablecard > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(1)')?.textContent,
         UltraSuperAttack: characterDocument.querySelector('.righttablecard > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(6) > td:nth-child(1)')?.textContent,
-        Passive: characterDocument.querySelector('.righttablecard > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(8) > td:nth-child(1)')?.textContent,
+        Passive: characterDocument.querySelector('[data-image-name="Passive skill.png"]')?.closest('tr')?.nextElementSibling?.textContent,
         Links: Array.from(characterDocument.querySelectorAll('.righttablecard > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(10) > td:nth-child(1) > center:nth-child(1) > span > a')).map(link => link.textContent),
         Categories: Array.from(characterDocument.querySelectorAll('.righttablecard > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(12) > td:nth-child(1) > center:nth-child(1) > a')).map(link => link.textContent),
         KiMeter: characterDocument.querySelector('.righttablecard > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > center:nth-child(1) > a:nth-child(1) > img:nth-child(1)')?.getAttribute('alt')?.split('.png')[0],
@@ -125,7 +130,7 @@ function extractCharacterData(characterDocument: Document) {
         KiMultiplier: characterDocument.querySelector('.righttablecard > table:nth-child(6) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1)')?.textContent,
 
     }
-    // console.log(characterData);
+    console.log(characterData);
     return characterData
 
 }
