@@ -7,14 +7,14 @@ import { JSDOM } from 'jsdom';
 getDokkanData();
 
 async function getDokkanData() {
-    const document: Document = await fetchFromWebOrCache('https://dbz-dokkanbattle.fandom.com/wiki/Category:LR', false);
-    const links: string[] = extractLinks(document);
-    saveData('LR-links', links)
-    const characterDocument: Document = await fetchFromWebOrCache(links[1])
-    // console.log(links[1]);
-    const data = extractCharacterData(characterDocument)
-    // console.log(data);
+    // const document: Document = await fetchFromWebOrCache('https://dbz-dokkanbattle.fandom.com/wiki/Category:LR', false);
+    // const links: string[] = extractLinks(document);
+    // saveData('LR-links', links)
 
+    // For testing a single character
+    const characterDocument: Document = await fetchFromWebOrCache('https://dbz-dokkanbattle.fandom.com/wiki/Wings_Spread_Out_to_the_Cosmos_Pan_(GT)_(Honey)')
+    // const characterDocument: Document = await fetchFromWebOrCache(links[1])
+    const data = extractCharacterData(characterDocument)
 
     // const charactersData = await Promise.all(links.map(async link => {
     //     const characterDocument: Document = await fetchFromWebOrCache(link)
@@ -89,7 +89,7 @@ async function getCharactersData(links: string[]) {
     const characterDocs = links.map(async link =>
         await getCharacterData(link)
     );
-    console.log(characterDocs);
+
     return characterDocs
 
 }
@@ -97,9 +97,10 @@ async function getCharacterData(link: string) {
     return await fetchFromWebOrCache(link, false);
 }
 function extractCharacterData(characterDocument: Document) {
+    
     const characterData = {
-        // name: characterDocument.querySelector('.mw-parser-output > table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > center:nth-child(1) > b')?.innerHTML.split('<br>')[0],
-        // Title: characterDocument.querySelector('.mw-parser-output > table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > center:nth-child(1) > b')?.innerHTML.split('<br>')[1],
+        // Name: characterDocument.querySelector('.mw-parser-output > table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > center:nth-child(1) > b')?.innerHTML.split('<br>')[1],
+        // Title: characterDocument.querySelector('.mw-parser-output > table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > center:nth-child(1) > b')?.innerHTML.split('<br>')[0],
         // MaxLevel: characterDocument.querySelector('.mw-parser-output > table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(1) > center:nth-child(1)')?.textContent,
         // MaxSALevel: characterDocument.querySelector('.mw-parser-output > table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2) > center:nth-child(1)')?.innerHTML.split('>/')[1],
         // Rarity: characterDocument.querySelector('.size45px > span:nth-child(2) > a:nth-child(1)')?.getAttribute('title')?.split('Category:')[1],
@@ -108,14 +109,19 @@ function extractCharacterData(characterDocument: Document) {
         // Cost: characterDocument.querySelector('.mw-parser-output > table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(5) > center:nth-child(1)')?.textContent,
         // ID: characterDocument.querySelector('.mw-parser-output > table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(6) > center:nth-child(1)')?.textContent,
         // ImageURL: characterDocument.querySelector('.size120px > img:nth-child(1)')?.getAttribute('src'),
-        // LeaderSkill: characterDocument.querySelector('.righttablecard > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1)')?.textContent,
-        // SuperAttack: characterDocument.querySelector('.righttablecard > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(1)')?.textContent,
+        // LeaderSkill: characterDocument.querySelector('[data-image-name="Leader Skill.png"]')?.closest('tr')?.nextElementSibling?.textContent,                                     
+        // EZALeaderSkill: characterDocument.querySelector('table.ezawidth:nth-child(3) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1)')?.textContent,
+        // SuperAttack: characterDocument.querySelector('[data-image-name="Super atk.png"]')?.closest('tr')?.nextElementSibling?.textContent,
+        // EZASuperAttack: characterDocument.querySelectorAll('table.ezawidth')[1]?.querySelector('[data-image-name="Super atk.png"]')?.closest('tr')?.nextElementSibling?.textContent,
         // UltraSuperAttack: characterDocument.querySelector('[data-image-name="Ultra Super atk.png"]')?.closest('tr')?.nextElementSibling?.textContent,
+        // EZAUltraSuperAttack: characterDocument.querySelectorAll('table.ezawidth')[1]?.querySelector('[data-image-name="Ultra Super atk.png"]')?.closest('tr')?.nextElementSibling?.textContent,
         // Passive: characterDocument.querySelector('[data-image-name="Passive skill.png"]')?.closest('tr')?.nextElementSibling?.textContent,
-        Links: extractLinks(characterDocument)
-
-        // Categories: Array.from(characterDocument.querySelectorAll('.righttablecard > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(12) > td:nth-child(1) > center:nth-child(1) > a')).map(link => link.textContent),
-        // KiMeter: characterDocument.querySelector('.righttablecard > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > center:nth-child(1) > a:nth-child(1) > img:nth-child(1)')?.getAttribute('alt')?.split('.png')[0],
+        // EZAPassive: characterDocument.querySelectorAll('table.ezawidth')[1]?.querySelector('[data-image-name="Passive skill.png"]')?.closest('tr')?.nextElementSibling?.textContent,
+        //TODO ActiveSkill: characterDocument.querySelector('[data-image-name="Passive skill.png"]')?.closest('tr')?.nextElementSibling?.textContent,
+        //TODO: EZAActiveSkill: characterDocument.querySelectorAll('table.ezawidth')[1]?.querySelector('[data-image-name="Passive skill.png"]')?.closest('tr')?.nextElementSibling?.textContent,
+        // Links: Array.from(characterDocument.querySelector('[data-image-name="Link skill.png"]')?.closest('tr')?.nextElementSibling?.querySelectorAll('span > a') ?? []).map(link => link.textContent),
+        // Categories: Array.from(characterDocument.querySelector('[data-image-name="Category.png"]')?.closest('tr')?.nextElementSibling?.querySelectorAll('a') ?? []).map(link => link.textContent),
+        // KiMeter: Array.from(characterDocument.querySelector('[data-image-name="Ki meter.png"]')?.closest('tbody')?.querySelectorAll('img') ?? []).map(kiMeter => kiMeter.getAttribute('alt')?.split('.png')[0]).slice(1),
         // BaseHP: characterDocument.querySelector('.righttablecard > table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2) > center:nth-child(1)')?.textContent,
         // MaxLevelHP: characterDocument.querySelector('.righttablecard > table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(3) > center:nth-child(1)')?.textContent,
         // FreeDupeHP: characterDocument.querySelector('.righttablecard > table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(4) > center:nth-child(1)')?.textContent,
@@ -131,19 +137,7 @@ function extractCharacterData(characterDocument: Document) {
         // KiMultiplier: characterDocument.querySelector('.righttablecard > table:nth-child(6) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1)')?.textContent,
 
     }
-
-    function extractLinks(characterDocument: Document) {
-        const nodeList = characterDocument.querySelector('[data-image-name="Link skill.png"]')
-            ?.closest('tr')
-            ?.nextElementSibling
-            ?.querySelectorAll('span > a')
-        if (nodeList != null) {
-            return Array.from(nodeList).map(link => link.textContent)
-        }
-    }
-
     console.log(characterData);
     return characterData
-
 }
 
