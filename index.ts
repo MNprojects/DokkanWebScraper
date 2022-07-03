@@ -12,7 +12,7 @@ async function getDokkanData() {
     // saveData('LR-links', links)
 
     // For testing a single character
-    const characterDocument: Document = await fetchFromWebOrCache('https://dbz-dokkanbattle.fandom.com/wiki/Wings_Spread_Out_to_the_Cosmos_Pan_(GT)_(Honey)')
+    const characterDocument: Document = await fetchFromWebOrCache('https://dbz-dokkanbattle.fandom.com/wiki/Wings_Spread_Out_to_the_Cosmos_Pan_(GT)_(Honey)#Before_Z-Awakening')
     // const characterDocument: Document = await fetchFromWebOrCache(links[1])
     const data = extractCharacterData(characterDocument)
 
@@ -99,8 +99,8 @@ async function getCharacterData(link: string) {
 function extractCharacterData(characterDocument: Document) {
     
     const characterData = {
-        // Name: characterDocument.querySelector('.mw-parser-output > table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > center:nth-child(1) > b')?.innerHTML.split('<br>')[1],
-        // Title: characterDocument.querySelector('.mw-parser-output > table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > center:nth-child(1) > b')?.innerHTML.split('<br>')[0],
+        Name: characterDocument.querySelector('.mw-parser-output')?.querySelector('table > tbody > tr > td:nth-child(2)')?.innerHTML.split('<br>')[1],
+        Title: characterDocument.querySelector('.mw-parser-output')?.querySelector('table > tbody > tr > td:nth-child(2)')?.innerHTML.split('<br>')[0],
         // MaxLevel: characterDocument.querySelector('.mw-parser-output > table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(1) > center:nth-child(1)')?.textContent,
         // MaxSALevel: characterDocument.querySelector('.mw-parser-output > table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2) > center:nth-child(1)')?.innerHTML.split('>/')[1],
         // Rarity: characterDocument.querySelector('.size45px > span:nth-child(2) > a:nth-child(1)')?.getAttribute('title')?.split('Category:')[1],
@@ -117,8 +117,8 @@ function extractCharacterData(characterDocument: Document) {
         // EZAUltraSuperAttack: characterDocument.querySelectorAll('table.ezawidth')[1]?.querySelector('[data-image-name="Ultra Super atk.png"]')?.closest('tr')?.nextElementSibling?.textContent,
         // Passive: characterDocument.querySelector('[data-image-name="Passive skill.png"]')?.closest('tr')?.nextElementSibling?.textContent,
         // EZAPassive: characterDocument.querySelectorAll('table.ezawidth')[1]?.querySelector('[data-image-name="Passive skill.png"]')?.closest('tr')?.nextElementSibling?.textContent,
-        //TODO ActiveSkill: characterDocument.querySelector('[data-image-name="Passive skill.png"]')?.closest('tr')?.nextElementSibling?.textContent,
-        //TODO: EZAActiveSkill: characterDocument.querySelectorAll('table.ezawidth')[1]?.querySelector('[data-image-name="Passive skill.png"]')?.closest('tr')?.nextElementSibling?.textContent,
+        // ActiveSkill: characterDocument.querySelector('[data-image-name="Active skill.png"]')?.closest('tr')?.nextElementSibling?.textContent,
+        // EZAActiveSkill: characterDocument.querySelectorAll('table.ezawidth')[1]?.querySelector('[data-image-name="Active skill.png"]')?.closest('tr')?.nextElementSibling?.textContent,
         // Links: Array.from(characterDocument.querySelector('[data-image-name="Link skill.png"]')?.closest('tr')?.nextElementSibling?.querySelectorAll('span > a') ?? []).map(link => link.textContent),
         // Categories: Array.from(characterDocument.querySelector('[data-image-name="Category.png"]')?.closest('tr')?.nextElementSibling?.querySelectorAll('a') ?? []).map(link => link.textContent),
         // KiMeter: Array.from(characterDocument.querySelector('[data-image-name="Ki meter.png"]')?.closest('tbody')?.querySelectorAll('img') ?? []).map(kiMeter => kiMeter.getAttribute('alt')?.split('.png')[0]).slice(1),
@@ -135,7 +135,6 @@ function extractCharacterData(characterDocument: Document) {
         // FreeDupeDefence: characterDocument.querySelector('.righttablecard > table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(4) > center:nth-child(1)')?.textContent,
         // RainbowDefence: characterDocument.querySelector('.righttablecard > table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(5) > center:nth-child(1)')?.textContent,
         // KiMultiplier: characterDocument.querySelector('.righttablecard > table:nth-child(6) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1)')?.textContent,
-
     }
     console.log(characterData);
     return characterData
