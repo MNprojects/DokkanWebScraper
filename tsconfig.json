@@ -1,15 +1,14 @@
 {
     "compilerOptions": {
-        "module": "ESNext",
+        "resolveJsonModule": true,
         "moduleResolution": "Node",
-        "target": "ES2020",
-        "jsx": "preserve",
+        "target": "ES2022",
         "strictNullChecks": true,
-        "strictFunctionTypes": true
+        "strictFunctionTypes": true,
+        "experimentalDecorators": false
     },
     "include": [
         "./",
-        "node_modules/@types/puppeteer/index.d.ts"
       ],
     "exclude": [
         "node_modules",
