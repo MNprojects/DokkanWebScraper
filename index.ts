@@ -78,10 +78,6 @@ function saveData(fileName: string, data: unknown) {
         { encoding: 'utf8' })
 }
 
-async function getCharacterData(link: string) {
-    return await fetchFromWebOrCache(link, false);
-}
-
 export function extractCharacterData(characterDocument: Document) {
     const characterData = {
         Name: characterDocument.querySelector('.mw-parser-output')?.querySelector('table > tbody > tr > td:nth-child(2)')?.innerHTML.split('<br>')[1].split('</b>')[0].replace(' &amp',''),
