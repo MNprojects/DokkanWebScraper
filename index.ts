@@ -9,14 +9,6 @@ export async function getDokkanData() {
     const links: string[] = extractLinks(document);
     saveData('LR-links', links)
 
-    // For testing a single character
-    // const characterDocument: Document = await fetchFromWebOrCache('https://dbz-dokkanbattle.fandom.com/wiki/Infinite_Power_God_Warriors_Super_Saiyan_God_Goku_%26_Super_Saiyan_God_Vegeta#Super_Saiyan_God_SS_Goku_&_Super_Saiyan_God_SS_Vegeta')
-    // const characterDocument: Document = await fetchFromWebOrCache('https://dbz-dokkanbattle.fandom.com/wiki/Boiling_Power_Super_Saiyan_Goku#Super_Saiyan')
-    // const characterDocument: Document = await fetchFromWebOrCache('https://dbz-dokkanbattle.fandom.com/wiki/Wings_Spread_Out_to_the_Cosmos_Pan_(GT)_(Honey)')
-    // const characterDocument: Document = await fetchFromWebOrCache('https://dbz-dokkanbattle.fandom.com/wiki/A_Promise_Made_to_Kakarot_Super_Saiyan_2_Vegeta_(Angel)')
-    // const characterDocument: Document = await fetchFromWebOrCache(links[1])
-    // const data = extractCharacterData(characterDocument)
-
     const charactersData = await Promise.all(links.map(async link => {
         const characterDocument: Document = await fetchFromWebOrCache(link)
         return extractCharacterData(characterDocument)
@@ -24,7 +16,6 @@ export async function getDokkanData() {
 
     saveData('LR-characters', charactersData)
 }
-
 
 function fetchPage(url: string): Promise<string | undefined> {
     const HTMLData = axios.get(url)
@@ -87,17 +78,10 @@ function saveData(fileName: string, data: unknown) {
         { encoding: 'utf8' })
 }
 
-async function getCharactersData(links: string[]) {
-    const characterDocs = links.map(async link =>
-        await getCharacterData(link)
-    );
-
-    return characterDocs
-
-}
 async function getCharacterData(link: string) {
     return await fetchFromWebOrCache(link, false);
 }
+
 export function extractCharacterData(characterDocument: Document) {
     const characterData = {
         Name: characterDocument.querySelector('.mw-parser-output')?.querySelector('table > tbody > tr > td:nth-child(2)')?.innerHTML.split('<br>')[1].split('</b>')[0].replace(' &amp',''),
