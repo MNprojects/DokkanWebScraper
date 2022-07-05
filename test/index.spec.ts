@@ -14,6 +14,7 @@ let transformEZALRCharacterDocument;
 let transformEZALRCharacterData;
 
 before(async function () {
+  this.timeout(10000);
   transformCharacterDocument = await fetchFromWebOrCache('https://dbz-dokkanbattle.fandom.com/wiki/Infinite_Power_God_Warriors_Super_Saiyan_God_Goku_%26_Super_Saiyan_God_Vegeta#Super_Saiyan_God_SS_Goku_&_Super_Saiyan_God_SS_Vegeta')
   transformCharacterData = extractCharacterData(transformCharacterDocument);
 
