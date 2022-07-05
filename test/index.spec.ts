@@ -10,6 +10,8 @@ let EZAActiveCharacterDocument;
 let EZAActiveCharacterData;
 let standardCharacterDocument;
 let standardCharacterData;
+let transformEZALRCharacterDocument;
+let transformEZALRCharacterData;
 
 before(async function () {
   transformCharacterDocument = await fetchFromWebOrCache('https://dbz-dokkanbattle.fandom.com/wiki/Infinite_Power_God_Warriors_Super_Saiyan_God_Goku_%26_Super_Saiyan_God_Vegeta#Super_Saiyan_God_SS_Goku_&_Super_Saiyan_God_SS_Vegeta')
@@ -23,6 +25,9 @@ before(async function () {
 
   standardCharacterDocument = await fetchFromWebOrCache('https://dbz-dokkanbattle.fandom.com/wiki/A_Promise_Made_to_Kakarot_Super_Saiyan_2_Vegeta_(Angel)')
   standardCharacterData = extractCharacterData(standardCharacterDocument);
+
+  transformEZALRCharacterDocument = await fetchFromWebOrCache('https://dbz-dokkanbattle.fandom.com/wiki/Fused_Fighting_Force_Super_Saiyan_Goku_(Angel)_%26_Super_Saiyan_Vegeta_(Angel)')
+  transformEZALRCharacterData = extractCharacterData(transformEZALRCharacterDocument);
 })
 
 
@@ -850,7 +855,15 @@ describe("Tranformation TransformedUltraSuperAttack Extraction", function () {
     equal(transformCharacterData.Transformations[0].TransformedUltraSuperAttack, "Massively raises ATK & DEF for 1 turn[2] and causes mega-colossal damage to enemy; disables enemy's action once within the turn")
   });
 });
-// TODO Transformed EZA Ultra Super Attack
+
+describe("Tranformation TransformedEZAUltraSuperAttack Extraction", function () {
+  it("should be able to extract the Transformations TransformedEZAUltraSuperAttack - transform", () => {
+    equal(transformCharacterData.Transformations[0].TransformedEZAUltraSuperAttack, undefined)
+  });
+  it("should be able to extract the Transformations TransformedEZAUltraSuperAttack - transform", () => {
+    equal(transformEZALRCharacterData.Transformations[0].TransformedEZAUltraSuperAttack, "Greatly raises DEF for 1 turn[3], causes mega-colossal damage to enemy and greatly lowers ATK & DEF[4]")
+  });
+});
 
 describe("Tranformation TransformedPassive Extraction", function () {
   it("should be able to extract the Transformation TransformedPassive - multitransform", () => {
@@ -904,7 +917,7 @@ describe("Tranformation TransformedActiveSkillCondition Extraction", function ()
   });
 });
 
-// TODO: Transformed EZA Active Skill + Condition
+// TODO: Transformed EZA Active Skill + Condition. Can't think of an example.
 
 
 describe("Tranformation TransformedLinks Extraction", function () {
