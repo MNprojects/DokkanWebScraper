@@ -12,6 +12,8 @@ let standardCharacterDocument;
 let standardCharacterData;
 let transformEZALRCharacterDocument;
 let transformEZALRCharacterData;
+let separateDetailsBoxDocument;
+let separateDetailsBoxData;
 
 before(async function () {
   this.timeout(10000);
@@ -29,6 +31,9 @@ before(async function () {
 
   transformEZALRCharacterDocument = await fetchFromWebOrCache('https://dbz-dokkanbattle.fandom.com/wiki/Fused_Fighting_Force_Super_Saiyan_Goku_(Angel)_%26_Super_Saiyan_Vegeta_(Angel)')
   transformEZALRCharacterData = extractCharacterData(transformEZALRCharacterDocument);
+
+  separateDetailsBoxDocument = await fetchFromWebOrCache('https://dbz-dokkanbattle.fandom.com/wiki/Ally_of_Love_and_Friendship_Videl')
+  separateDetailsBoxData = extractCharacterData(separateDetailsBoxDocument);
 })
 
 
@@ -732,6 +737,10 @@ describe("KiMultiplier Extraction", function () {
 
   it("should be able to extract the KiMultiplier - standard", () => {
     equal(standardCharacterData.KiMultiplier, '12 Ki Multiplier is 150%; 24 Ki Multiplier is 200%; SA Lv.20 raises SA Multiplier by an additional 30%');
+  });
+
+  it("should be able to extract the KiMultiplier - separate details box", () => {
+    equal(separateDetailsBoxData.KiMultiplier, '12 Ki Multiplier is 150%');
   });
 });
 
