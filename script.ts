@@ -1,0 +1,3 @@
+import { getDokkanData } from ".";
+
+getDokkanData()
