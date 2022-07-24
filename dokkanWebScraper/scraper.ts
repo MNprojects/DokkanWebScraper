@@ -15,7 +15,6 @@ export async function getDokkanData() {
     }))
 
     return charactersData
-
 }
 
 function fetchPage(url: string): Promise<string | undefined> {
@@ -40,16 +39,6 @@ function extractLinks(document: Document) {
         document.querySelectorAll('.category-page__member-link'),
     );
     return URIs.map(link => 'https://dbz-dokkanbattle.fandom.com'.concat(link.href))
-}
-
-function saveData(fileName: string, data: unknown) {
-    if (!existsSync(resolve(__dirname, 'data'))) {
-        mkdirSync('data');
-    }
-    writeFile(
-        resolve(__dirname, `data/${fileName}.json`),
-        JSON.stringify(data),
-        { encoding: 'utf8' })
 }
 
 export function extractCharacterData(characterDocument: Document) {
@@ -100,12 +89,11 @@ export function extractCharacterData(characterDocument: Document) {
     return characterData
 }
 
-// TODO
 function extractTransformedCharacterData(characterDocument: Document): Transformation[] {
     const transformedArray: Transformation[] = []
     const transformCount = characterDocument.querySelectorAll('.mw-parser-output > div:nth-child(2) > div > ul > li').length
 
-    // index = 1 to skip the untransformed state
+    // index = 1 to skip the untransformed state which should have been extracted separately outside of this function
     for (let index = 1; index < transformCount; index++) {
         const transformationData: Transformation = {
             TransformedName: characterDocument.querySelector(`.mw-parser-output > div:nth-child(2) > div:nth-child(${index + 2}) > table > tbody > tr > td:nth-child(2)`)?.innerHTML.split('<br>')[1].split('</b>')[0].replaceAll('&amp;', '&') ?? 'Error',
@@ -125,6 +113,5 @@ function extractTransformedCharacterData(characterDocument: Document): Transform
         transformedArray.push(transformationData)
     }
     return transformedArray
-
 }
 
