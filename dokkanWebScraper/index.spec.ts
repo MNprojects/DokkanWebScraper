@@ -1,6 +1,6 @@
 import { deepEqual, equal } from "assert";
 import { it } from "mocha";
-import { fetchFromWebOrCache, extractCharacterData } from "../";
+import { fetchFromWeb, extractCharacterData } from "./scraper";
 
 let transformCharacterDocument;
 let transformCharacterData;
@@ -17,22 +17,22 @@ let separateDetailsBoxData;
 
 before(async function () {
   this.timeout(10000);
-  transformCharacterDocument = await fetchFromWebOrCache('https://dbz-dokkanbattle.fandom.com/wiki/Infinite_Power_God_Warriors_Super_Saiyan_God_Goku_%26_Super_Saiyan_God_Vegeta#Super_Saiyan_God_SS_Goku_&_Super_Saiyan_God_SS_Vegeta')
+  transformCharacterDocument = await fetchFromWeb('https://dbz-dokkanbattle.fandom.com/wiki/Divine_Warriors_with_Infinite_Power_Super_Saiyan_God_Goku_%26_Super_Saiyan_God_Vegeta')
   transformCharacterData = extractCharacterData(transformCharacterDocument);
 
-  multiTransformEZACharacterDocument = await fetchFromWebOrCache('https://dbz-dokkanbattle.fandom.com/wiki/Boiling_Power_Super_Saiyan_Goku#Super_Saiyan')
+  multiTransformEZACharacterDocument = await fetchFromWeb('https://dbz-dokkanbattle.fandom.com/wiki/Boiling_Power_Super_Saiyan_Goku#Super_Saiyan')
   multiTransformEZACharacterData = extractCharacterData(multiTransformEZACharacterDocument);
 
-  EZAActiveCharacterDocument = await fetchFromWebOrCache('https://dbz-dokkanbattle.fandom.com/wiki/Wings_Spread_Out_to_the_Cosmos_Pan_(GT)_(Honey)')
+  EZAActiveCharacterDocument = await fetchFromWeb('https://dbz-dokkanbattle.fandom.com/wiki/Wings_Spread_Out_to_the_Cosmos_Pan_(GT)_(Honey)')
   EZAActiveCharacterData = extractCharacterData(EZAActiveCharacterDocument);
 
-  standardCharacterDocument = await fetchFromWebOrCache('https://dbz-dokkanbattle.fandom.com/wiki/A_Promise_Made_to_Kakarot_Super_Saiyan_2_Vegeta_(Angel)')
+  standardCharacterDocument = await fetchFromWeb('https://dbz-dokkanbattle.fandom.com/wiki/A_Promise_Made_to_Kakarot_Super_Saiyan_2_Vegeta_(Angel)')
   standardCharacterData = extractCharacterData(standardCharacterDocument);
 
-  transformEZALRCharacterDocument = await fetchFromWebOrCache('https://dbz-dokkanbattle.fandom.com/wiki/Fused_Fighting_Force_Super_Saiyan_Goku_(Angel)_%26_Super_Saiyan_Vegeta_(Angel)')
+  transformEZALRCharacterDocument = await fetchFromWeb('https://dbz-dokkanbattle.fandom.com/wiki/Fused_Fighting_Force_Super_Saiyan_Goku_(Angel)_%26_Super_Saiyan_Vegeta_(Angel)')
   transformEZALRCharacterData = extractCharacterData(transformEZALRCharacterDocument);
 
-  separateDetailsBoxDocument = await fetchFromWebOrCache('https://dbz-dokkanbattle.fandom.com/wiki/Ally_of_Love_and_Friendship_Videl')
+  separateDetailsBoxDocument = await fetchFromWeb('https://dbz-dokkanbattle.fandom.com/wiki/Ally_of_Love_and_Friendship_Videl')
   separateDetailsBoxData = extractCharacterData(separateDetailsBoxDocument);
 })
 
@@ -61,7 +61,7 @@ describe("Title Extraction", function () {
   });
 
   it("should be able to extract the title - transform", () => {
-    equal(transformCharacterData.Title, "Infinite Power God Warriors");
+    equal(transformCharacterData.Title, "Divine Warriors with Infinite Power");
   });
 
   it("should be able to extract the title - EZA", () => {
@@ -223,7 +223,7 @@ describe("LeaderSkill Extraction", function () {
   });
 
   it("should be able to extract the LeaderSkill - transform", () => {
-    equal(transformCharacterData.LeaderSkill, '"Beyond Super Saiyan" or "Movie Heroes" Category Ki +3 and HP, ATK & DEF +170%;plus an additional HP, ATK & DEF +30% for characters who also belong to the "Kamehameha" Category');
+    equal(transformCharacterData.LeaderSkill, '"Power Beyond Super Saiyan" or "Movie Heroes" Category Ki +3 and HP, ATK & DEF +170%;plus an additional HP, ATK & DEF +30% for characters who also belong to the "Kamehameha" Category');
   });
 
   it("should be able to extract the LeaderSkill - EZA", () => {
@@ -331,7 +331,7 @@ describe("Passive Extraction", function () {
   });
 
   it("should be able to extract the Passive - transform", () => {
-    equal(transformCharacterData.Passive, "Activates the Entrance Animation at start of character's attacking turn (once only); guards all attacks within the same turn from start of turn; ATK & DEF +77%  and Ki +1 per Type Ki Sphere obtained for 7 turns from start of turn; ATK & DEF +120% and plus an additional Ki +1 per Type Ki Sphere obtained; chance of performing a critical hit +7% per  Ki Sphere obtained; launches an additional Super Attack when Ki is 20 or more; attacks effective against all types when Ki is 24")
+    equal(transformCharacterData.Passive, "Activates the Entrance Animation upon entry (once only); guards all attacks for 1 turn from start of turn; plus an additional Ki +1 per Type Ki Sphere obtained and ATK & DEF +77% for 7 turns from start of turn; ATK & DEF +120%; plus an additional Ki +1 per Type Ki Sphere obtained; chance of performing a critical hit +7% per  Ki Sphere obtained; launches an additional Super Attack when Ki is 20 or more; attacks effective against all types when Ki is 24")
   });
 
   it("should be able to extract the Passive - EZA", () => {
@@ -472,11 +472,11 @@ describe("Links Extraction", function () {
 
 describe("Categories Extraction", function () {
   it("should be able to extract the Categories - multitransform", () => {
-    deepEqual(multiTransformEZACharacterData.Categories, ['Realm of Gods','Super Saiyan 3','Pure Saiyans','Full Power','Transformation Boost',"Goku's Family",'Super Saiyans','Kamehameha','Super Saiyan 2','Turtle School','Mastered Evolution','Legendary Existence','Bond of Friendship','Accelerated Battle','Beyond Super Saiyan','Bond of Parent and Child']);
+    deepEqual(multiTransformEZACharacterData.Categories, ['Realm of Gods','Super Saiyan 3','Pure Saiyans','Full Power','Transformation Boost',"Goku's Family",'Super Saiyans','Kamehameha','Super Saiyan 2','Turtle School','Mastered Evolution','Legendary Existence','Bond of Friendship','Accelerated Battle','Power Beyond Super Saiyan','Bond of Parent and Child']);
   });
 
   it("should be able to extract the Categories - transform", () => {
-    deepEqual(transformCharacterData.Categories, ['Fusion','Realm of Gods','Pure Saiyans','Transformation Boost','Joined Forces','Movie Heroes','Kamehameha','Final Trump Card','Time Limit','Mastered Evolution','Beyond Super Saiyan','Fused Fighters','Bond of Parent and Child'])
+    deepEqual(transformCharacterData.Categories, ['Fusion','Realm of Gods','Pure Saiyans','Transformation Boost','Joined Forces','Movie Heroes','Kamehameha','Final Trump Card','Time Limit','Mastered Evolution','Power Beyond Super Saiyan','Fused Fighters','Bond of Parent and Child'])
   });
 
   it("should be able to extract the Categories - EZA", () => {
@@ -484,7 +484,7 @@ describe("Categories Extraction", function () {
   });
 
   it("should be able to extract the Categories - standard", () => {
-    deepEqual(standardCharacterData.Categories, ['Resurrected Warriors','Majin Buu Saga','Pure Saiyans',"Vegeta's Family",'Worthy Rivals','Otherworld Warriors','Super Saiyan 2','All-Out Struggle','Connected Hope','Gifted Warriors','Time Limit','Mastered Evolution','Battle of Fate','Beyond Super Saiyan','Bond of Parent and Child']);
+    deepEqual(standardCharacterData.Categories, ['Resurrected Warriors','Majin Buu Saga','Pure Saiyans',"Vegeta's Family",'Worthy Rivals','Otherworld Warriors','Super Saiyan 2','All-Out Struggle','Connected Hope','Gifted Warriors','Time Limit','Mastered Evolution','Battle of Fate','Power Beyond Super Saiyan','Bond of Parent and Child']);
   });
 });
 
@@ -884,7 +884,7 @@ describe("Tranformation TransformedPassive Extraction", function () {
   });
 
   it("should be able to extract the Transformations TransformedPassive - transform", () => {
-    equal(transformCharacterData.Transformations[0].TransformedPassive, "ATK & DEF +177%; plus an additional Ki +2 per Type Ki Sphere obtained; chance of performing a critical hit and chance of evading enemy attacks (including Super Attack) +7% per  Ki Sphere obtained; attacks effective against all types when Ki is 16 or more; launches an additional Super Attack when Ki is 20 or more; medium chance[3] of performing a Critical hit; medium chance[4] of evading enemy's attack (including Super Attack)")
+    equal(transformCharacterData.Transformations[0].TransformedPassive, "ATK & DEF +177%; plus an additional Ki +2 per Type Ki Sphere obtained; chance of performing a critical hit and chance of evading enemy's attack (including Super Attack) +7% per  Ki Sphere obtained; attacks effective against all types when Ki is 16 or more; launches an additional Super Attack when Ki is 20 or more; medium chance[3] of performing a Critical hit; medium chance[4] of evading enemy's attack (including Super Attack)")
   });
 });
 
@@ -910,7 +910,7 @@ describe("Tranformation TransformedActiveSkill Extraction", function () {
   });
 
   it("should be able to extract the Transformations TransformedActiveSkill - transform", () => {
-    equal(transformCharacterData.Transformations[0].TransformedActiveSkill, "Causes ultimate damage to enemy and all attack become critical hits for 1 turn")
+    equal(transformCharacterData.Transformations[0].TransformedActiveSkill, "Causes ultimate damage to enemy and within the turn activated, all attack become critical hits")
   });
 });
 

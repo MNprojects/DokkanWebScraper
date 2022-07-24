@@ -6,16 +6,16 @@ import { JSDOM } from 'jsdom';
 import { Character, Rarities, Classes, Types, Transformation } from "./character";
 
 export async function getDokkanData() {
-    const document: Document = await fetchFromWebOrCache('https://dbz-dokkanbattle.fandom.com/wiki/Category:UR', false);
+    const document: Document = await fetchFromWeb('https://dbz-dokkanbattle.fandom.com/wiki/Category:LR');
     const links: string[] = extractLinks(document);
-    saveData('LR-links', links)
-
+   
     const charactersData = await Promise.all(links.map(async link => {
-        const characterDocument: Document = await fetchFromWebOrCache(link)
+        const characterDocument: Document = await fetchFromWeb(link)
         return extractCharacterData(characterDocument)
     }))
 
-    saveData('UR-characters', charactersData)
+    return charactersData
+
 }
 
 function fetchPage(url: string): Promise<string | undefined> {
@@ -28,38 +28,11 @@ function fetchPage(url: string): Promise<string | undefined> {
     return HTMLData;
 }
 
-export async function fetchFromWebOrCache(url: string, ignoreCache = false) {
-    // If the cache folder doesn't exist, create it
-    if (!existsSync(resolve(__dirname, '.cache'))) {
-        mkdirSync('.cache')
-    }
-    // console.log(`Getting data for ${url}...`);
-
-    const fileName = resolve(__dirname, `.cache/${Buffer.from(url).toString('base64')}.html`)
-    // console.log(fileName);
-
-    if (!ignoreCache &&
-        existsSync(fileName,)
-    ) {
-        // console.log(`I read ${url} from cache`);
-        const HTMLData = await readFile(
-            fileName,
-            { encoding: 'utf8' }
-        );
-        const dom = new JSDOM(HTMLData);
-        return dom.window.document;
-    } else {
-        // console.log(`I fetched ${url} fresh`);
+export async function fetchFromWeb(url: string) {
         const HTMLData = await fetchPage(url);
-        if (!ignoreCache && HTMLData) {
-            writeFile(
-                fileName,
-                HTMLData, { encoding: 'utf8' },
-            );
-        }
         const dom = new JSDOM(HTMLData);
         return dom.window.document;
-    }
+
 }
 
 function extractLinks(document: Document) {

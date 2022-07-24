@@ -1,3 +1,0 @@
-import { getDokkanData } from ".";
-
-getDokkanData()

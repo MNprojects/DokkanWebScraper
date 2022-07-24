@@ -1,17 +1,10 @@
 {
-    "compilerOptions": {
-        "resolveJsonModule": true,
-        "moduleResolution": "Node",
-        "target": "ES2022",
-        "strictNullChecks": true,
-        "strictFunctionTypes": true,
-        "experimentalDecorators": false
-    },
-    "include": [
-        "./",
-      ],
-    "exclude": [
-        "node_modules",
-        "**/node_modules/*"
-    ],
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2022",
+    "outDir": "dist",
+    "rootDir": ".",
+    "sourceMap": true,
+    "strict": false
+  }
 }

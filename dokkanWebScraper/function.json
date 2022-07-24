@@ -1,0 +1,20 @@
+{
+  "bindings": [
+    {
+      "name": "myTimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "10 * * * * *"
+    },
+    {
+      "name": "myOutputCosmos",
+      "type": "cosmosDB",
+      "databaseName": "testdb",
+      "collectionName": "TestDokkanDB",
+      "createIfNotExists": true,
+      "connectionStringsetting": "CosmosConString",
+      "direction": "out"
+    }
+  ],
+  "scriptFile": "../dist/dokkanWebScraper/index.js"
+}
