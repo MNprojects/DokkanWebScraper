@@ -38,25 +38,25 @@ jobs:
         name: scraper-node-app
         path: .
 
-  deploy:
-    permissions: 
-      contents: none
-    runs-on: ubuntu-latest
-    needs: build
-    environment: 
-      name: prod
-      url: ${{ steps.deploy-to-function.outputs.function-url }}
+  # deploy:
+  #   permissions: 
+  #     contents: none
+  #   runs-on: ubuntu-latest
+  #   needs: build
+  #   environment: 
+  #     name: prod
+  #     url: ${{ steps.deploy-to-function.outputs.function-url }}
     
-    steps:
-    - name: Download artifact from build job
-    uses: actions/download-artifact@v3
-    with: 
-      name: scraper-node-app
+  #   steps:
+  #   - name: Download artifact from build job
+  #   uses: actions/download-artifact@v3
+  #   with: 
+  #     name: scraper-node-app
 
-    - name: Deploy to Function
-    id: deploy-to-function
-    uses: azure/functions-deploy@v2
-    with:
-      app-name: ${{ env.FUNCTION_NAME }}
-      publish-profile: ${{ secrets.AZURE_FUNCTION_PUBLISH_PROFILE }}
-      package: ${{ secrets.AZURE_FUNCTION_PACKAGE_PATH }}
+  #   - name: Deploy to Function
+  #   id: deploy-to-function
+  #   uses: azure/functions-deploy@v2
+  #   with:
+  #     app-name: ${{ env.FUNCTION_NAME }}
+  #     publish-profile: ${{ secrets.AZURE_FUNCTION_PUBLISH_PROFILE }}
+  #     package: ${{ secrets.AZURE_FUNCTION_PACKAGE_PATH }}
