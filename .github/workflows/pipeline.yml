@@ -49,7 +49,7 @@ jobs:
     - name: Download artifact from build job
       uses: actions/download-artifact@v3
       with: 
-      name: scraper-node-app
+        name: scraper-node-app
 
   #   - name: Deploy to Function
   #   id: deploy-to-function
