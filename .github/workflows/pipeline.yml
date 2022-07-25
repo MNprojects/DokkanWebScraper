@@ -9,22 +9,20 @@ on:
 env: 
     FUNCTION_NAME: 'dokkan-web-scraper'
     AZURE_FUNCTION_PACKAGE_PATH: '.'
+    NODE_VERSION: 16.x
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [16.x]
 
     steps:
     - name: 'Code Checkout'
       uses: actions/checkout@v3
 
-    - name: Setup Node.js ${{ matrix.node-version }}
+    - name: Setup Node.js ${{ env.NODE_VERSION }}
       uses: actions/setup-node@v3
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: ${{ env.NODE_VERSION }}
         cache: 'npm'
     - run: npm install
     - run: npm run build --if-present
