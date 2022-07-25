@@ -30,7 +30,7 @@ jobs:
 
     - name: Deploy to Function
       id: deploy-to-function
-      uses: azure/functions-deploy@v2
+      uses: azure/functions-deploy@v1
       with:
         app-name: ${{ env.FUNCTION_NAME }}
         publish-profile: ${{ secrets.AZURE_FUNCTION_PUBLISH_PROFILE }}
