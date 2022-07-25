@@ -28,10 +28,10 @@ jobs:
     - run: npm run build --if-present
     - run: npm test
 
-    # - name: Deploy to Function
-    #   id: deploy-to-function
-    #   uses: azure/functions-deploy@v2
-    #   with:
-    #     app-name: ${{ env.FUNCTION_NAME }}
-    #     publish-profile: ${{ secrets.AZURE_FUNCTION_PUBLISH_PROFILE }}
-    #     package: ${{ secrets.AZURE_FUNCTION_PACKAGE_PATH }}
+    - name: Deploy to Function
+      id: deploy-to-function
+      uses: azure/functions-deploy@v2
+      with:
+        app-name: ${{ env.FUNCTION_NAME }}
+        publish-profile: ${{ secrets.AZURE_FUNCTION_PUBLISH_PROFILE }}
+        package: ${{ secrets.AZURE_FUNCTION_PACKAGE_PATH }}
