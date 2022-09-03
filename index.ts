@@ -9,7 +9,7 @@ async function saveDokkanResults() {
     let day = ("0" + currentDate.getUTCDate()).slice(-2);
     let month = ("0" + currentDate.getUTCMonth()).slice(-2);
     let year = currentDate.getUTCFullYear()
-    saveData(year + month + day, data)
+    saveData(year + month + day + 'DokkanCharacterData', data)
 }
 
 function saveData(fileName: string, data: unknown) {
