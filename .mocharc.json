@@ -2,6 +2,6 @@
   "extension": [
     "ts"
   ],
-  "spec": "./dokkanWebScraper/*.spec.ts",
+  "spec": "./*.spec.ts",
   "require": "ts-node/register"
 }

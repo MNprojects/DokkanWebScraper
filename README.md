@@ -1,7 +1,10 @@
 # DokkanWebScraper
 Scrapes the Dokkan Wiki to build a database of characters etc
 
-Run locally using the Azure extension for VSCode and hit F5
+Run locally
+npx ts-node scraper.ts
+
+Output goes to ./data/{currentDate}DokkanCharacterData.json
 
 Test 
 npm run test

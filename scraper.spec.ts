@@ -884,7 +884,7 @@ describe("Tranformation TransformedPassive Extraction", function () {
   });
 
   it("should be able to extract the Transformations TransformedPassive - transform", () => {
-    equal(transformCharacterData.Transformations[0].TransformedPassive, "ATK & DEF +177%; plus an additional Ki +2 per Type Ki Sphere obtained; chance of performing a critical hit and chance of evading enemy's attack (including Super Attack) +7% per  Ki Sphere obtained; attacks effective against all types when Ki is 16 or more; launches an additional Super Attack when Ki is 20 or more; medium chance[3] of performing a Critical hit; medium chance[4] of evading enemy's attack (including Super Attack)")
+    equal(transformCharacterData.Transformations[0].TransformedPassive, "ATK & DEF +177%; plus an additional Ki +2 per Type Ki Sphere obtained; chance of performing a critical hit and chance of evading enemy's attack (including Super Attack) +7% per  Ki Sphere obtained; attacks effective against all types when Ki is 16 or more; launches an additional Super Attack when Ki is 20 or more; medium chance[3] of performing a critical hit; medium chance[4] of evading enemy's attack (including Super Attack)")
   });
 });
 

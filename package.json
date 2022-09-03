@@ -6,7 +6,6 @@
     "build": "tsc",
     "watch": "tsc -w",
     "prestart": "npm run build",
-    "start": "func start",
     "test": "mocha"
   },
   "dependencies": {
