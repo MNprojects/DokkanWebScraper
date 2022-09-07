@@ -39,891 +39,891 @@ before(async function () {
 
 describe("Name Extraction", function () {
   it("should be able to extract the name - multitransform", () => {
-    equal(multiTransformEZACharacterData.Name, "Super Saiyan Goku");
+    equal(multiTransformEZACharacterData.name, "Super Saiyan Goku");
   });
 
   it("should be able to extract the name - transform", () => {
-    equal(transformCharacterData.Name, "Super Saiyan God Goku & Super Saiyan God Vegeta");
+    equal(transformCharacterData.name, "Super Saiyan God Goku & Super Saiyan God Vegeta");
   });
 
   it("should be able to extract the name - EZA", () => {
-    equal(EZAActiveCharacterData.Name, "Pan (GT) (Honey)");
+    equal(EZAActiveCharacterData.name, "Pan (GT) (Honey)");
   });
 
   it("should be able to extract the name - standard", () => {
-    equal(standardCharacterData.Name, "Super Saiyan 2 Vegeta (Angel)");
+    equal(standardCharacterData.name, "Super Saiyan 2 Vegeta (Angel)");
   });
 });
 
 describe("Title Extraction", function () {
   it("should be able to extract the title - multitransform", () => {
-    equal(multiTransformEZACharacterData.Title, "Boiling Power");
+    equal(multiTransformEZACharacterData.title, "Boiling Power");
   });
 
   it("should be able to extract the title - transform", () => {
-    equal(transformCharacterData.Title, "Divine Warriors with Infinite Power");
+    equal(transformCharacterData.title, "Divine Warriors with Infinite Power");
   });
 
   it("should be able to extract the title - EZA", () => {
-    equal(EZAActiveCharacterData.Title, "Wings Spread Out to the Cosmos");
+    equal(EZAActiveCharacterData.title, "Wings Spread Out to the Cosmos");
   });
 
   it("should be able to extract the title - standard", () => {
-    equal(standardCharacterData.Title, "A Promise Made to Kakarot");
+    equal(standardCharacterData.title, "A Promise Made to Kakarot");
   });
 });
 
 describe("Max Level Extraction", function () {
   it("should be able to extract the Max Level - multitransform", () => {
-    equal(multiTransformEZACharacterData.MaxLevel, "140");
+    equal(multiTransformEZACharacterData.maxLevel, "140");
   });
 
   it("should be able to extract the Max Level - transform", () => {
-    equal(transformCharacterData.MaxLevel, "150");
+    equal(transformCharacterData.maxLevel, "150");
   });
 
   it("should be able to extract the Max Level - EZA", () => {
-    equal(EZAActiveCharacterData.MaxLevel, "150");
+    equal(EZAActiveCharacterData.maxLevel, "150");
   });
 
   it("should be able to extract the Max Level - standard", () => {
-    equal(standardCharacterData.MaxLevel, "150");
+    equal(standardCharacterData.maxLevel, "150");
   });
 });
 
 describe("Max SA Level Extraction", function () {
   it("should be able to extract the Max SA Level - multitransform", () => {
-    equal(multiTransformEZACharacterData.MaxSALevel, "15");
+    equal(multiTransformEZACharacterData.maxSALevel, "15");
   });
 
   it("should be able to extract the Max SA Level - transform", () => {
-    equal(transformCharacterData.MaxSALevel, "20");
+    equal(transformCharacterData.maxSALevel, "20");
   });
 
   it("should be able to extract the Max SA Level - EZA", () => {
-    equal(EZAActiveCharacterData.MaxSALevel, "25");
+    equal(EZAActiveCharacterData.maxSALevel, "25");
   });
 
   it("should be able to extract the Max SA Level - standard", () => {
-    equal(standardCharacterData.MaxSALevel, "20");
+    equal(standardCharacterData.maxSALevel, "20");
   });
 });
 
 describe("Rarity Extraction", function () {
   it("should be able to extract the Rarity - multitransform", () => {
-    equal(multiTransformEZACharacterData.Rarity, "UR");
+    equal(multiTransformEZACharacterData.rarity, "UR");
   });
 
   it("should be able to extract the Rarity - transform", () => {
-    equal(transformCharacterData.Rarity, "LR");
+    equal(transformCharacterData.rarity, "LR");
   });
 
   it("should be able to extract the Rarity - EZA", () => {
-    equal(EZAActiveCharacterData.Rarity, "LR");
+    equal(EZAActiveCharacterData.rarity, "LR");
   });
 
   it("should be able to extract the Rarity - standard", () => {
-    equal(standardCharacterData.Rarity, "LR");
+    equal(standardCharacterData.rarity, "LR");
   });
 });
 
 describe("Class Extraction", function () {
   it("should be able to extract the Class - multitransform", () => {
-    equal(multiTransformEZACharacterData.Class, "Super");
+    equal(multiTransformEZACharacterData.class, "Super");
   });
 
   it("should be able to extract the Class - transform", () => {
-    equal(transformCharacterData.Class, "Super");
+    equal(transformCharacterData.class, "Super");
   });
 
   it("should be able to extract the Class - EZA", () => {
-    equal(EZAActiveCharacterData.Class, "Super");
+    equal(EZAActiveCharacterData.class, "Super");
   });
 
   it("should be able to extract the Class - standard", () => {
-    equal(standardCharacterData.Class, "Super");
+    equal(standardCharacterData.class, "Super");
   });
 });
 
 describe("Type Extraction", function () {
   it("should be able to extract the Type - multitransform", () => {
-    equal(multiTransformEZACharacterData.Type, "AGL");
+    equal(multiTransformEZACharacterData.type, "AGL");
   });
 
   it("should be able to extract the Type - transform", () => {
-    equal(transformCharacterData.Type, "TEQ");
+    equal(transformCharacterData.type, "TEQ");
   });
 
   it("should be able to extract the Type - EZA", () => {
-    equal(EZAActiveCharacterData.Type, "STR");
+    equal(EZAActiveCharacterData.type, "STR");
   });
 
   it("should be able to extract the Type - standard", () => {
-    equal(standardCharacterData.Type, "PHY");
+    equal(standardCharacterData.type, "PHY");
   });
 });
 
 describe("Cost Extraction", function () {
   it("should be able to extract the Cost - multitransform", () => {
-    equal(multiTransformEZACharacterData.Cost, "58");
+    equal(multiTransformEZACharacterData.cost, "58");
   });
 
   it("should be able to extract the Cost - transform", () => {
-    equal(transformCharacterData.Cost, "77");
+    equal(transformCharacterData.cost, "77");
   });
 
   it("should be able to extract the Cost - EZA", () => {
-    equal(EZAActiveCharacterData.Cost, "59");
+    equal(EZAActiveCharacterData.cost, "59");
   });
 
   it("should be able to extract the Cost - standard", () => {
-    equal(standardCharacterData.Cost, "77");
+    equal(standardCharacterData.cost, "77");
   });
 });
 
 describe("ID Extraction", function () {
   it("should be able to extract the ID - multitransform", () => {
-    equal(multiTransformEZACharacterData.ID, "11476");
+    equal(multiTransformEZACharacterData.id, "11476");
   });
 
   it("should be able to extract the ID - transform", () => {
-    equal(transformCharacterData.ID, "12238");
+    equal(transformCharacterData.id, "12238");
   });
 
   it("should be able to extract the ID - EZA", () => {
-    equal(EZAActiveCharacterData.ID, "11591");
+    equal(EZAActiveCharacterData.id, "11591");
   });
 
   it("should be able to extract the ID - standard", () => {
-    equal(standardCharacterData.ID, "12022");
+    equal(standardCharacterData.id, "12022");
   });
 });
 
 describe("ImageURL Extraction", function () {
   it("should be able to extract the ImageURL - multitransform", () => {
-    equal(multiTransformEZACharacterData.ImageURL, "https://static.wikia.nocookie.net/dbz-dokkanbattle/images/2/23/Card_1014760_thumb.png/revision/latest?cb=20180827182222");
+    equal(multiTransformEZACharacterData.imageURL, "https://static.wikia.nocookie.net/dbz-dokkanbattle/images/2/23/Card_1014760_thumb.png/revision/latest?cb=20180827182222");
   });
 
   it("should be able to extract the ImageURL - transform", () => {
-    equal(transformCharacterData.ImageURL, "https://static.wikia.nocookie.net/dbz-dokkanbattle/images/7/75/Card_1022380_thumb_apng.png/revision/latest?cb=20220130071219&format=original");
+    equal(transformCharacterData.imageURL, "https://static.wikia.nocookie.net/dbz-dokkanbattle/images/7/75/Card_1022380_thumb_apng.png/revision/latest?cb=20220130071219&format=original");
   });
 
   it("should be able to extract the ImageURL - EZA", () => {
-    equal(EZAActiveCharacterData.ImageURL, "https://vignette.wikia.nocookie.net/dbz-dokkanbattle/images/3/35/Card_1015910_thumb_apng.png/revision/latest?cb=20190128070309&format=original");
+    equal(EZAActiveCharacterData.imageURL, "https://vignette.wikia.nocookie.net/dbz-dokkanbattle/images/3/35/Card_1015910_thumb_apng.png/revision/latest?cb=20190128070309&format=original");
   });
 
   it("should be able to extract the ImageURL - standard", () => {
-    equal(standardCharacterData.ImageURL, "https://vignette.wikia.nocookie.net/dbz-dokkanbattle/images/a/a1/Card_1020220_thumb_apng.png/revision/latest?cb=20200916113202&format=original");
+    equal(standardCharacterData.imageURL, "https://vignette.wikia.nocookie.net/dbz-dokkanbattle/images/a/a1/Card_1020220_thumb_apng.png/revision/latest?cb=20200916113202&format=original");
   });
 });
 
 describe("LeaderSkill Extraction", function () {
   it("should be able to extract the LeaderSkill - multitransform", () => {
-    equal(multiTransformEZACharacterData.LeaderSkill, "Super Class Ki +3 and HP, ATK & DEF +120%");
+    equal(multiTransformEZACharacterData.leaderSkill, "Super Class Ki +3 and HP, ATK & DEF +120%");
   });
 
   it("should be able to extract the LeaderSkill - transform", () => {
-    equal(transformCharacterData.LeaderSkill, '"Power Beyond Super Saiyan" or "Movie Heroes" Category Ki +3 and HP, ATK & DEF +170%;plus an additional HP, ATK & DEF +30% for characters who also belong to the "Kamehameha" Category');
+    equal(transformCharacterData.leaderSkill, '"Power Beyond Super Saiyan" or "Movie Heroes" Category Ki +3 and HP, ATK & DEF +170%;plus an additional HP, ATK & DEF +30% for characters who also belong to the "Kamehameha" Category');
   });
 
   it("should be able to extract the LeaderSkill - EZA", () => {
-    equal(EZAActiveCharacterData.LeaderSkill, "Recovers 3333 HP per Ki Sphere of character's Type obtained");
+    equal(EZAActiveCharacterData.leaderSkill, "Recovers 3333 HP per Ki Sphere of character's Type obtained");
   });
 
   it("should be able to extract the LeaderSkill - standard", () => {
-    equal(standardCharacterData.LeaderSkill, '"Worthy Rivals" Category Ki +4 and HP, ATK & DEF +150%;or Type Ki +4 and HP, ATK & DEF +100%');
+    equal(standardCharacterData.leaderSkill, '"Worthy Rivals" Category Ki +4 and HP, ATK & DEF +150%;or Type Ki +4 and HP, ATK & DEF +100%');
   });
 });
 
 describe("EZALeaderSkill Extraction", function () {
   it("should be able to extract the EZALeaderSkill - multitransform", () => {
-    equal(multiTransformEZACharacterData.EZALeaderSkill, "Super Class Ki +3 and HP, ATK & DEF +130%");
+    equal(multiTransformEZACharacterData.ezaLeaderSkill, "Super Class Ki +3 and HP, ATK & DEF +130%");
   });
 
   it("should be able to extract the EZALeaderSkill - transform", () => {
-    equal(transformCharacterData.EZALeaderSkill, undefined);
+    equal(transformCharacterData.ezaLeaderSkill, undefined);
   });
 
   it("should be able to extract the EZALeaderSkill - EZA", () => {
-    equal(EZAActiveCharacterData.EZALeaderSkill, "Recovers 5555 HP per Ki Sphere of character's Type obtained");
+    equal(EZAActiveCharacterData.ezaLeaderSkill, "Recovers 5555 HP per Ki Sphere of character's Type obtained");
   });
 
   it("should be able to extract the EZALeaderSkill - standard", () => {
-    equal(standardCharacterData.EZALeaderSkill, undefined);
+    equal(standardCharacterData.ezaLeaderSkill, undefined);
   });
 });
 
 describe("SuperAttack Extraction", function () {
   it("should be able to extract the SuperAttack - multitransform", () => {
-    equal(multiTransformEZACharacterData.SuperAttack, "Raises ATK & DEF[1] and causes immense damage to enemy");
+    equal(multiTransformEZACharacterData.superAttack, "Raises ATK & DEF[1] and causes immense damage to enemy");
   });
 
   it("should be able to extract the SuperAttack - transform", () => {
-    equal(transformCharacterData.SuperAttack, 'Raises ATK & DEF[1] and causes colossal damage to enemy');
+    equal(transformCharacterData.superAttack, 'Raises ATK & DEF[1] and causes colossal damage to enemy');
   });
 
   it("should be able to extract the SuperAttack - EZA", () => {
-    equal(EZAActiveCharacterData.SuperAttack, "Causes colossal damage with a chance of stunning the enemy[1]");
+    equal(EZAActiveCharacterData.superAttack, "Causes colossal damage with a chance of stunning the enemy[1]");
   });
 
   it("should be able to extract the SuperAttack - standard", () => {
-    equal(standardCharacterData.SuperAttack, 'Raises DEF for 1 turn[1] and causes colossal damage to enemy');
+    equal(standardCharacterData.superAttack, 'Raises DEF for 1 turn[1] and causes colossal damage to enemy');
   });
 });
 
 describe("EZASuperAttack Extraction", function () {
   it("should be able to extract the EZASuperAttack - multitransform", () => {
-    equal(multiTransformEZACharacterData.EZASuperAttack, "Raises ATK & DEF[1], causes immense damage to enemy and lowers DEF[2]");
+    equal(multiTransformEZACharacterData.ezaSuperAttack, "Raises ATK & DEF[1], causes immense damage to enemy and lowers DEF[2]");
   });
 
   it("should be able to extract the EZASuperAttack - transform", () => {
-    equal(transformCharacterData.EZASuperAttack, undefined);
+    equal(transformCharacterData.ezaSuperAttack, undefined);
   });
 
   it("should be able to extract the EZASuperAttack - EZA", () => {
-    equal(EZAActiveCharacterData.EZASuperAttack, "Causes colossal damage with a medium chance of stunning the enemy[2]");
+    equal(EZAActiveCharacterData.ezaSuperAttack, "Causes colossal damage with a medium chance of stunning the enemy[2]");
   });
 
   it("should be able to extract the EZASuperAttack - standard", () => {
-    equal(standardCharacterData.EZASuperAttack, undefined);
+    equal(standardCharacterData.ezaSuperAttack, undefined);
   });
 });
 
 describe("UltraSuperAttack Extraction", function () {
   it("should be able to extract the UltraSuperAttack - multitransform", () => {
-    equal(multiTransformEZACharacterData.UltraSuperAttack, undefined);
+    equal(multiTransformEZACharacterData.ultraSuperAttack, undefined);
   });
 
   it("should be able to extract the UltraSuperAttack - transform", () => {
-    equal(transformCharacterData.UltraSuperAttack, 'Raises ATK & DEF[1] and causes mega-colossal damage to enemy');
+    equal(transformCharacterData.ultraSuperAttack, 'Raises ATK & DEF[1] and causes mega-colossal damage to enemy');
   });
 
   it("should be able to extract the UltraSuperAttack - EZA", () => {
-    equal(EZAActiveCharacterData.UltraSuperAttack, "Causes colossal damage with a medium chance of stunning the enemy[2]");
+    equal(EZAActiveCharacterData.ultraSuperAttack, "Causes colossal damage with a medium chance of stunning the enemy[2]");
   });
 
   it("should be able to extract the UltraSuperAttack - standard", () => {
-    equal(standardCharacterData.UltraSuperAttack, 'Causes mega-colossal damage to enemy and greatly lowers DEF[2]');
+    equal(standardCharacterData.ultraSuperAttack, 'Causes mega-colossal damage to enemy and greatly lowers DEF[2]');
   });
 });
 
 describe("EZAUltraSuperAttack Extraction", function () {
   it("should be able to extract the EZAUltraSuperAttack - multitransform", () => {
-    equal(multiTransformEZACharacterData.EZAUltraSuperAttack, undefined);
+    equal(multiTransformEZACharacterData.ezaUltraSuperAttack, undefined);
   });
 
   it("should be able to extract the EZAUltraSuperAttack - transform", () => {
-    equal(transformCharacterData.EZAUltraSuperAttack, undefined);
+    equal(transformCharacterData.ezaUltraSuperAttack, undefined);
   });
 
   it("should be able to extract the EZAUltraSuperAttack - EZA", () => {
-    equal(EZAActiveCharacterData.EZAUltraSuperAttack, "Greatly raises ATK for 1 turn[3] and causes colossal damage with a medium chance of stunning the enemy[2]");
+    equal(EZAActiveCharacterData.ezaUltraSuperAttack, "Greatly raises ATK for 1 turn[3] and causes colossal damage with a medium chance of stunning the enemy[2]");
   });
 
   it("should be able to extract the EZAUltraSuperAttack - standard", () => {
-    equal(standardCharacterData.EZAUltraSuperAttack, undefined);
+    equal(standardCharacterData.ezaUltraSuperAttack, undefined);
   });
 });
 
 describe("Passive Extraction", function () {
   it("should be able to extract the Passive - multitransform", () => {
-    equal(multiTransformEZACharacterData.Passive, 'ATK & DEF +80%; reduces damage received by 21%; Transform when conditions are met');
+    equal(multiTransformEZACharacterData.passive, 'ATK & DEF +80%; reduces damage received by 21%; Transform when conditions are met');
   });
 
   it("should be able to extract the Passive - transform", () => {
-    equal(transformCharacterData.Passive, "Activates the Entrance Animation upon entry (once only); guards all attacks for 1 turn from start of turn; plus an additional Ki +1 per Type Ki Sphere obtained and ATK & DEF +77% for 7 turns from start of turn; ATK & DEF +120%; plus an additional Ki +1 per Type Ki Sphere obtained; chance of performing a critical hit +7% per  Ki Sphere obtained; launches an additional Super Attack when Ki is 20 or more; attacks effective against all types when Ki is 24")
+    equal(transformCharacterData.passive, "Activates the Entrance Animation upon entry (once only); guards all attacks for 1 turn from start of turn; plus an additional Ki +1 per Type Ki Sphere obtained and ATK & DEF +77% for 7 turns from start of turn; ATK & DEF +120%; plus an additional Ki +1 per Type Ki Sphere obtained; chance of performing a critical hit +7% per  Ki Sphere obtained; launches an additional Super Attack when Ki is 20 or more; attacks effective against all types when Ki is 24")
   });
 
   it("should be able to extract the Passive - EZA", () => {
-    equal(EZAActiveCharacterData.Passive, "Recovers 33% of damage dealt as HP;high chance[4] of reducing damage received by 55%");
+    equal(EZAActiveCharacterData.passive, "Recovers 33% of damage dealt as HP;high chance[4] of reducing damage received by 55%");
   });
 
   it("should be able to extract the Passive - standard", () => {
-    equal(standardCharacterData.Passive, 'ATK & DEF +70%; plus an additional ATK & DEF +4% each time Ki rises by 1 (up to 70%); Ki +3 when the name of an ally who is attacking in the same turn or an enemy includes "Goku" (Youth, Captain Ginyu, Jr., etc. excluded); plus an additional Ki +3 when there is a "Majin Buu Saga" Category ally whose name includes "Goku" attacking in the same turn');
+    equal(standardCharacterData.passive, 'ATK & DEF +70%; plus an additional ATK & DEF +4% each time Ki rises by 1 (up to 70%); Ki +3 when the name of an ally who is attacking in the same turn or an enemy includes "Goku" (Youth, Captain Ginyu, Jr., etc. excluded); plus an additional Ki +3 when there is a "Majin Buu Saga" Category ally whose name includes "Goku" attacking in the same turn');
   });
 });
 
 describe("EZAPassive Extraction", function () {
   it("should be able to extract the EZAPassive - multitransform", () => {
-    equal(multiTransformEZACharacterData.EZAPassive, 'ATK & DEF +110%; Ki +3 plus an additional ATK +10% and DEF +40% when attacking Extreme Class enemies; reduces damage received by 21%; Transforms when conditions are met');
+    equal(multiTransformEZACharacterData.ezaPassive, 'ATK & DEF +110%; Ki +3 plus an additional ATK +10% and DEF +40% when attacking Extreme Class enemies; reduces damage received by 21%; Transforms when conditions are met');
   });
 
   it("should be able to extract the EZAPassive - transform", () => {
-    equal(transformCharacterData.EZAPassive, undefined)
+    equal(transformCharacterData.ezaPassive, undefined)
   });
 
   it("should be able to extract the EZAPassive - EZA", () => {
-    equal(EZAActiveCharacterData.EZAPassive, "High chance of Ki +3 and high chance[5] of an additional Ki +3; recovers 33% of damage dealt as HP; reduces damage received by 55%");
+    equal(EZAActiveCharacterData.ezaPassive, "High chance of Ki +3 and high chance[5] of an additional Ki +3; recovers 33% of damage dealt as HP; reduces damage received by 55%");
   });
 
   it("should be able to extract the EZAPassive - standard", () => {
-    equal(standardCharacterData.EZAPassive, undefined);
+    equal(standardCharacterData.ezaPassive, undefined);
   });
 });
 
 describe("ActiveSkill Extraction", function () {
   it("should be able to extract the ActiveSkill - multitransform", () => {
-    equal(multiTransformEZACharacterData.ActiveSkill, undefined);
+    equal(multiTransformEZACharacterData.activeSkill, undefined);
   });
 
   it("should be able to extract the ActiveSkill - transform", () => {
-    equal(transformCharacterData.ActiveSkill, 'Transforms; Can be activated starting from the 4th turn from the start of battle (once only)')
+    equal(transformCharacterData.activeSkill, 'Transforms; Can be activated starting from the 4th turn from the start of battle (once only)')
   });
 
   it("should be able to extract the ActiveSkill - EZA", () => {
-    equal(EZAActiveCharacterData.ActiveSkill, "All allies' ATK +33% for 1 turn");
+    equal(EZAActiveCharacterData.activeSkill, "All allies' ATK +33% for 1 turn");
   });
 
   it("should be able to extract the ActiveSkill - standard", () => {
-    equal(standardCharacterData.ActiveSkill, 'Ki +1, ATK +59% and DEF +78% for 1 turn');
+    equal(standardCharacterData.activeSkill, 'Ki +1, ATK +59% and DEF +78% for 1 turn');
   });
 });
 
 describe("ActiveSkillCondition Extraction", function () {
   it("should be able to extract the ActiveSkillCondition - multitransform", () => {
-    equal(multiTransformEZACharacterData.ActiveSkillCondition, undefined);
+    equal(multiTransformEZACharacterData.activeSkillCondition, undefined);
   });
 
   it("should be able to extract the ActiveSkillCondition - transform", () => {
-    equal(transformCharacterData.ActiveSkillCondition, undefined)
+    equal(transformCharacterData.activeSkillCondition, undefined)
   });
 
   it("should be able to extract the ActiveSkillCondition - EZA", () => {
-    equal(EZAActiveCharacterData.ActiveSkillCondition, "Can be activated starting from the 3rd turn from start of battle (once only)");
+    equal(EZAActiveCharacterData.activeSkillCondition, "Can be activated starting from the 3rd turn from start of battle (once only)");
   });
 
   it("should be able to extract the ActiveSkillCondition - standard", () => {
-    equal(standardCharacterData.ActiveSkillCondition, 'Can be activated when there is a "Majin Buu Saga" Category ally whose name includes "Goku" attacking in the same turn, starting from the 3rd turn from the start of battle (once only)');
+    equal(standardCharacterData.activeSkillCondition, 'Can be activated when there is a "Majin Buu Saga" Category ally whose name includes "Goku" attacking in the same turn, starting from the 3rd turn from the start of battle (once only)');
   });
 });
 
 describe("EZAActiveSkill Extraction", function () {
   it("should be able to extract the EZAActiveSkill - multitransform", () => {
-    equal(multiTransformEZACharacterData.EZAActiveSkill, undefined);
+    equal(multiTransformEZACharacterData.ezaActiveSkill, undefined);
   });
 
   it("should be able to extract the EZAActiveSkill - transform", () => {
-    equal(transformCharacterData.EZAActiveSkill, undefined)
+    equal(transformCharacterData.ezaActiveSkill, undefined)
   });
 
   it("should be able to extract the EZAActiveSkill - EZA", () => {
-    equal(EZAActiveCharacterData.EZAActiveSkill, "All allies' ATK +33% for 1 turn");
+    equal(EZAActiveCharacterData.ezaActiveSkill, "All allies' ATK +33% for 1 turn");
   });
 
   it("should be able to extract the EZAActiveSkill - standard", () => {
-    equal(standardCharacterData.EZAActiveSkill, undefined);
+    equal(standardCharacterData.ezaActiveSkill, undefined);
   });
 });
 
 
 describe("EZAActiveSkillCondition Extraction", function () {
   it("should be able to extract the EZAActiveSkillCondition - multitransform", () => {
-    equal(multiTransformEZACharacterData.EZAActiveSkillCondition, undefined);
+    equal(multiTransformEZACharacterData.ezaActiveSkillCondition, undefined);
   });
 
   it("should be able to extract the EZAActiveSkillCondition - transform", () => {
-    equal(transformCharacterData.EZAActiveSkillCondition, undefined)
+    equal(transformCharacterData.ezaActiveSkillCondition, undefined)
   });
 
   it("should be able to extract the EZAActiveSkillCondition - EZA", () => {
-    equal(EZAActiveCharacterData.EZAActiveSkillCondition, "Can be activated starting from the 3rd turn from start of battle (once only)");
+    equal(EZAActiveCharacterData.ezaActiveSkillCondition, "Can be activated starting from the 3rd turn from start of battle (once only)");
   });
 
   it("should be able to extract the EZAActiveSkillCondition - standard", () => {
-    equal(standardCharacterData.EZAActiveSkillCondition, undefined);
+    equal(standardCharacterData.ezaActiveSkillCondition, undefined);
   });
 });
 
 describe("TransformationCondition Extraction", function () {
   it("should be able to extract the TransformationCondition - multitransform", () => {
-    equal(multiTransformEZACharacterData.TransformationCondition, "Transforms starting from the 3rd turn from the start of battle");
+    equal(multiTransformEZACharacterData.transformationCondition, "Transforms starting from the 3rd turn from the start of battle");
   });
 
   it("should be able to extract the TransformationCondition - transform", () => {
-    equal(transformCharacterData.TransformationCondition, "Transforms; Can be activated starting from the 4th turn from the start of battle (once only)")
+    equal(transformCharacterData.transformationCondition, "Transforms; Can be activated starting from the 4th turn from the start of battle (once only)")
   });
 
   it("should be able to extract the TransformationCondition - EZA", () => {
-    equal(EZAActiveCharacterData.TransformationCondition, undefined);
+    equal(EZAActiveCharacterData.transformationCondition, undefined);
   });
 
   it("should be able to extract the TransformationCondition - standard", () => {
-    equal(standardCharacterData.TransformationCondition, undefined);
+    equal(standardCharacterData.transformationCondition, undefined);
   });
 });
 
 describe("Links Extraction", function () {
   it("should be able to extract the Links - multitransform", () => {
-    deepEqual(multiTransformEZACharacterData.Links, ['All in the Family','Golden Warrior','Super Saiyan','Experienced Fighters','Kamehameha','Prepared for Battle','Fierce Battle']);
+    deepEqual(multiTransformEZACharacterData.links, ['All in the Family','Golden Warrior','Super Saiyan','Experienced Fighters','Kamehameha','Prepared for Battle','Fierce Battle']);
   });
 
   it("should be able to extract the Links - transform", () => {
-    deepEqual(transformCharacterData.Links, ['Super Saiyan','Kamehameha','Warrior Gods','Godly Power','Prepared for Battle','Fierce Battle','Legendary Power'])
+    deepEqual(transformCharacterData.links, ['Super Saiyan','Kamehameha','Warrior Gods','Godly Power','Prepared for Battle','Fierce Battle','Legendary Power'])
   });
 
   it("should be able to extract the Links - EZA", () => {
-    deepEqual(EZAActiveCharacterData.Links, ['All in the Family','The Saiyan Lineage','Battlefield Diva','GT','The Innocents','Shattering the Limit','Legendary Power']);
+    deepEqual(EZAActiveCharacterData.links, ['All in the Family','The Saiyan Lineage','Battlefield Diva','GT','The Innocents','Shattering the Limit','Legendary Power']);
   });
 
   it("should be able to extract the Links - standard", () => {
-    deepEqual(standardCharacterData.Links, ['Saiyan Warrior Race','Prodigies','Super Saiyan','Royal Lineage','Golden Warrior','Fierce Battle','Legendary Power']);
+    deepEqual(standardCharacterData.links, ['Saiyan Warrior Race','Prodigies','Super Saiyan','Royal Lineage','Golden Warrior','Fierce Battle','Legendary Power']);
   });
 });
 
 describe("Categories Extraction", function () {
   it("should be able to extract the Categories - multitransform", () => {
-    deepEqual(multiTransformEZACharacterData.Categories, ['Realm of Gods','Super Saiyan 3','Pure Saiyans','Full Power','Transformation Boost',"Goku's Family",'Super Saiyans','Kamehameha','Super Saiyan 2','Turtle School','Mastered Evolution','Legendary Existence','Bond of Friendship','Accelerated Battle','Power Beyond Super Saiyan','Bond of Parent and Child']);
+    deepEqual(multiTransformEZACharacterData.categories, ['Realm of Gods','Super Saiyan 3','Pure Saiyans','Full Power','Transformation Boost',"Goku's Family",'Super Saiyans','Kamehameha','Super Saiyan 2','Turtle School','Mastered Evolution','Legendary Existence','Bond of Friendship','Accelerated Battle','Power Beyond Super Saiyan','Bond of Parent and Child']);
   });
 
   it("should be able to extract the Categories - transform", () => {
-    deepEqual(transformCharacterData.Categories, ['Fusion','Realm of Gods','Pure Saiyans','Transformation Boost','Joined Forces','Movie Heroes','Kamehameha','Final Trump Card','Time Limit','Mastered Evolution','Power Beyond Super Saiyan','Fused Fighters','Bond of Parent and Child'])
+    deepEqual(transformCharacterData.categories, ['Fusion','Realm of Gods','Pure Saiyans','Transformation Boost','Joined Forces','Movie Heroes','Kamehameha','Final Trump Card','Time Limit','Mastered Evolution','Power Beyond Super Saiyan','Fused Fighters','Bond of Parent and Child'])
   });
 
   it("should be able to extract the Categories - EZA", () => {
-    deepEqual(EZAActiveCharacterData.Categories, ['Hybrid Saiyans','Dragon Ball Seekers',"Goku's Family",'Youth','Space-Traveling Warriors','GT Heroes','Bond of Friendship','Bond of Parent and Child']);
+    deepEqual(EZAActiveCharacterData.categories, ['Hybrid Saiyans','Dragon Ball Seekers',"Goku's Family",'Youth','Space-Traveling Warriors','GT Heroes','Bond of Friendship','Bond of Parent and Child']);
   });
 
   it("should be able to extract the Categories - standard", () => {
-    deepEqual(standardCharacterData.Categories, ['Resurrected Warriors','Majin Buu Saga','Pure Saiyans',"Vegeta's Family",'Worthy Rivals','Otherworld Warriors','Super Saiyan 2','All-Out Struggle','Connected Hope','Gifted Warriors','Time Limit','Mastered Evolution','Battle of Fate','Power Beyond Super Saiyan','Bond of Parent and Child']);
+    deepEqual(standardCharacterData.categories, ['Resurrected Warriors','Majin Buu Saga','Pure Saiyans',"Vegeta's Family",'Worthy Rivals','Otherworld Warriors','Super Saiyan 2','All-Out Struggle','Connected Hope','Gifted Warriors','Time Limit','Mastered Evolution','Battle of Fate','Power Beyond Super Saiyan','Bond of Parent and Child']);
   });
 });
 
 describe("KiMeter Extraction", function () {
   it("should be able to extract the KiMeter - multitransform", () => {
-    deepEqual(multiTransformEZACharacterData.KiMeter, ['KiMeter 2 Green']);
+    deepEqual(multiTransformEZACharacterData.kiMeter, ['KiMeter 2 Green']);
   });
 
   it("should be able to extract the KiMeter - transform", () => {
-    deepEqual(transformCharacterData.KiMeter, ['KiMeter 2 Green LR'])
+    deepEqual(transformCharacterData.kiMeter, ['KiMeter 2 Green LR'])
   });
 
   it("should be able to extract the KiMeter - EZA", () => {
-    deepEqual(EZAActiveCharacterData.KiMeter, ['KiMeter 2 Green LR','KiMeter 2 Green 10 Red LR']);
+    deepEqual(EZAActiveCharacterData.kiMeter, ['KiMeter 2 Green LR','KiMeter 2 Green 10 Red LR']);
   });
 
   it("should be able to extract the KiMeter - standard", () => {
-    deepEqual(standardCharacterData.KiMeter, ['KiMeter 2 Green LR']);
+    deepEqual(standardCharacterData.kiMeter, ['KiMeter 2 Green LR']);
   });
 });
 
 describe("BaseHP Extraction", function () {
   it("should be able to extract the BaseHP - multitransform", () => {
-    equal(multiTransformEZACharacterData.BaseHP, '3213');
+    equal(multiTransformEZACharacterData.baseHP, '3213');
   });
 
   it("should be able to extract the BaseHP - transform", () => {
-    equal(transformCharacterData.BaseHP, '4992')
+    equal(transformCharacterData.baseHP, '4992')
   });
 
   it("should be able to extract the BaseHP - EZA", () => {
-    equal(EZAActiveCharacterData.BaseHP, "5087");
+    equal(EZAActiveCharacterData.baseHP, "5087");
   });
 
   it("should be able to extract the BaseHP - standard", () => {
-    equal(standardCharacterData.BaseHP, '5007');
+    equal(standardCharacterData.baseHP, '5007');
   });
 });
 
 describe("MaxLevelHP Extraction", function () {
   it("should be able to extract the MaxLevelHP - multitransform", () => {
-    equal(multiTransformEZACharacterData.MaxLevelHP, '10605');
+    equal(multiTransformEZACharacterData.maxLevelHP, '10605');
   });
 
   it("should be able to extract the MaxLevelHP - transform", () => {
-    equal(transformCharacterData.MaxLevelHP, '16475')
+    equal(transformCharacterData.maxLevelHP, '16475')
   });
 
   it("should be able to extract the MaxLevelHP - EZA", () => {
-    equal(EZAActiveCharacterData.MaxLevelHP, "16788");
+    equal(EZAActiveCharacterData.maxLevelHP, "16788");
   });
 
   it("should be able to extract the MaxLevelHP - standard", () => {
-    equal(standardCharacterData.MaxLevelHP, '16688');
+    equal(standardCharacterData.maxLevelHP, '16688');
   });
 });
 
 describe("FreeDupeHP Extraction", function () {
   it("should be able to extract the FreeDupeHP - multitransform", () => {
-    equal(multiTransformEZACharacterData.FreeDupeHP, '12605');
+    equal(multiTransformEZACharacterData.freeDupeHP, '12605');
   });
 
   it("should be able to extract the FreeDupeHP - transform", () => {
-    equal(transformCharacterData.FreeDupeHP, '18475')
+    equal(transformCharacterData.freeDupeHP, '18475')
   });
 
   it("should be able to extract the FreeDupeHP - EZA", () => {
-    equal(EZAActiveCharacterData.FreeDupeHP, "17988");
+    equal(EZAActiveCharacterData.freeDupeHP, "17988");
   });
 
   it("should be able to extract the FreeDupeHP - standard", () => {
-    equal(standardCharacterData.FreeDupeHP, '18688');
+    equal(standardCharacterData.freeDupeHP, '18688');
   });
 });
 
 describe("RainbowHP Extraction", function () {
   it("should be able to extract the RainbowHP - multitransform", () => {
-    equal(multiTransformEZACharacterData.RainbowHP, '15205');
+    equal(multiTransformEZACharacterData.rainbowHP, '15205');
   });
 
   it("should be able to extract the RainbowHP - transform", () => {
-    equal(transformCharacterData.RainbowHP, '21075')
+    equal(transformCharacterData.rainbowHP, '21075')
   });
 
   it("should be able to extract the RainbowHP - EZA", () => {
-    equal(EZAActiveCharacterData.RainbowHP, "19788");
+    equal(EZAActiveCharacterData.rainbowHP, "19788");
   });
 
   it("should be able to extract the RainbowHP - standard", () => {
-    equal(standardCharacterData.RainbowHP, '22088');
+    equal(standardCharacterData.rainbowHP, '22088');
   });
 });
 
 describe("BaseAttack Extraction", function () {
   it("should be able to extract the BaseAttack - multitransform", () => {
-    equal(multiTransformEZACharacterData.BaseAttack, '3629');
+    equal(multiTransformEZACharacterData.baseAttack, '3629');
   });
 
   it("should be able to extract the BaseAttack - transform", () => {
-    equal(transformCharacterData.BaseAttack, '5053')
+    equal(transformCharacterData.baseAttack, '5053')
   });
 
   it("should be able to extract the BaseAttack - EZA", () => {
-    equal(EZAActiveCharacterData.BaseAttack, "3252");
+    equal(EZAActiveCharacterData.baseAttack, "3252");
   });
 
   it("should be able to extract the BaseAttack - standard", () => {
-    equal(standardCharacterData.BaseAttack, '4748');
+    equal(standardCharacterData.baseAttack, '4748');
   });
 });
 
 describe("MaxLevelAttack Extraction", function () {
   it("should be able to extract the MaxLevelAttack - multitransform", () => {
-    equal(multiTransformEZACharacterData.MaxLevelAttack, '11978');
+    equal(multiTransformEZACharacterData.maxLevelAttack, '11978');
   });
 
   it("should be able to extract the MaxLevelAttack - transform", () => {
-    equal(transformCharacterData.MaxLevelAttack, '16675')
+    equal(transformCharacterData.maxLevelAttack, '16675')
   });
 
   it("should be able to extract the MaxLevelAttack - EZA", () => {
-    equal(EZAActiveCharacterData.MaxLevelAttack, "10734");
+    equal(EZAActiveCharacterData.maxLevelAttack, "10734");
   });
 
   it("should be able to extract the MaxLevelAttack - standard", () => {
-    equal(standardCharacterData.MaxLevelAttack, '15825');
+    equal(standardCharacterData.maxLevelAttack, '15825');
   });
 });
 
 describe("FreeDupeAttack Extraction", function () {
   it("should be able to extract the FreeDupeAttack - multitransform", () => {
-    equal(multiTransformEZACharacterData.FreeDupeAttack, '13978');
+    equal(multiTransformEZACharacterData.freeDupeAttack, '13978');
   });
 
   it("should be able to extract the FreeDupeAttack - transform", () => {
-    equal(transformCharacterData.FreeDupeAttack, '18675')
+    equal(transformCharacterData.freeDupeAttack, '18675')
   });
 
   it("should be able to extract the FreeDupeAttack - EZA", () => {
-    equal(EZAActiveCharacterData.FreeDupeAttack, "11934");
+    equal(EZAActiveCharacterData.freeDupeAttack, "11934");
   });
 
   it("should be able to extract the FreeDupeAttack - standard", () => {
-    equal(standardCharacterData.FreeDupeAttack, '17825');
+    equal(standardCharacterData.freeDupeAttack, '17825');
   });
 });
 
 describe("RainbowAttack Extraction", function () {
   it("should be able to extract the RainbowAttack - multitransform", () => {
-    equal(multiTransformEZACharacterData.RainbowAttack, '16978');
+    equal(multiTransformEZACharacterData.rainbowAttack, '16978');
   });
 
   it("should be able to extract the RainbowAttack - transform", () => {
-    equal(transformCharacterData.RainbowAttack, '22075')
+    equal(transformCharacterData.rainbowAttack, '22075')
   });
 
   it("should be able to extract the RainbowAttack - EZA", () => {
-    equal(EZAActiveCharacterData.RainbowAttack, "13974");
+    equal(EZAActiveCharacterData.rainbowAttack, "13974");
   });
 
   it("should be able to extract the RainbowAttack - standard", () => {
-    equal(standardCharacterData.RainbowAttack, '20825');
+    equal(standardCharacterData.rainbowAttack, '20825');
   });
 });
 
 describe("BaseDefence Extraction", function () {
   it("should be able to extract the BaseDefence - multitransform", () => {
-    equal(multiTransformEZACharacterData.BaseDefence, '1621');
+    equal(multiTransformEZACharacterData.baseDefence, '1621');
   });
 
   it("should be able to extract the BaseDefence - transform", () => {
-    equal(transformCharacterData.BaseDefence, '2475')
+    equal(transformCharacterData.baseDefence, '2475')
   });
 
   it("should be able to extract the BaseDefence - EZA", () => {
-    equal(EZAActiveCharacterData.BaseDefence, "2496");
+    equal(EZAActiveCharacterData.baseDefence, "2496");
   });
 
   it("should be able to extract the BaseDefence - standard", () => {
-    equal(standardCharacterData.BaseDefence, '2674');
+    equal(standardCharacterData.baseDefence, '2674');
   });
 });
 
 describe("MaxDefence Extraction", function () {
   it("should be able to extract the MaxDefence - multitransform", () => {
-    equal(multiTransformEZACharacterData.MaxDefence, '5350');
+    equal(multiTransformEZACharacterData.maxDefence, '5350');
   });
 
   it("should be able to extract the MaxDefence - transform", () => {
-    equal(transformCharacterData.MaxDefence, '8169')
+    equal(transformCharacterData.maxDefence, '8169')
   });
 
   it("should be able to extract the MaxDefence - EZA", () => {
-    equal(EZAActiveCharacterData.MaxDefence, "8239");
+    equal(EZAActiveCharacterData.maxDefence, "8239");
   });
 
   it("should be able to extract the MaxDefence - standard", () => {
-    equal(standardCharacterData.MaxDefence, '8913');
+    equal(standardCharacterData.maxDefence, '8913');
   });
 });
 
 describe("FreeDupeDefence Extraction", function () {
   it("should be able to extract the FreeDupeDefence - multitransform", () => {
-    equal(multiTransformEZACharacterData.FreeDupeDefence, '7350');
+    equal(multiTransformEZACharacterData.freeDupeDefence, '7350');
   });
 
   it("should be able to extract the FreeDupeDefence - transform", () => {
-    equal(transformCharacterData.FreeDupeDefence, '10169')
+    equal(transformCharacterData.freeDupeDefence, '10169')
   });
 
   it("should be able to extract the FreeDupeDefence - EZA", () => {
-    equal(EZAActiveCharacterData.FreeDupeDefence, "9439");
+    equal(EZAActiveCharacterData.freeDupeDefence, "9439");
   });
 
   it("should be able to extract the FreeDupeDefence - standard", () => {
-    equal(standardCharacterData.FreeDupeDefence, '10913');
+    equal(standardCharacterData.freeDupeDefence, '10913');
   });
 });
 
 describe("RainbowDefence Extraction", function () {
   it("should be able to extract the RainbowDefence - multitransform", () => {
-    equal(multiTransformEZACharacterData.RainbowDefence, '10750');
+    equal(multiTransformEZACharacterData.rainbowDefence, '10750');
   });
 
   it("should be able to extract the RainbowDefence - transform", () => {
-    equal(transformCharacterData.RainbowDefence, '13169')
+    equal(transformCharacterData.rainbowDefence, '13169')
   });
 
   it("should be able to extract the RainbowDefence - EZA", () => {
-    equal(EZAActiveCharacterData.RainbowDefence, "10999");
+    equal(EZAActiveCharacterData.rainbowDefence, "10999");
   });
 
   it("should be able to extract the RainbowDefence - standard", () => {
-    equal(standardCharacterData.RainbowDefence, '13513');
+    equal(standardCharacterData.rainbowDefence, '13513');
   });
 });
 
 describe("KiMultiplier Extraction", function () {
   it("should be able to extract the KiMultiplier - multitransform", () => {
-    equal(multiTransformEZACharacterData.KiMultiplier, '12 Ki Multiplier is 150%; ');
+    equal(multiTransformEZACharacterData.kiMultiplier, '12 Ki Multiplier is 150%; ');
   });
 
   it("should be able to extract the KiMultiplier - transform", () => {
-    equal(transformCharacterData.KiMultiplier, '12 Ki Multiplier is 160%; 24 Ki Multiplier is 200%; SA Lv.20 raises SA Multiplier by an additional 30%')
+    equal(transformCharacterData.kiMultiplier, '12 Ki Multiplier is 160%; 24 Ki Multiplier is 200%; SA Lv.20 raises SA Multiplier by an additional 30%')
   });
 
   it("should be able to extract the KiMultiplier - EZA", () => {
-    equal(EZAActiveCharacterData.KiMultiplier, "12 Ki Multiplier is 140%; 24 Ki Multiplier is 200%; SA Lv.20 raises SA Multiplier by an additional 30%");
+    equal(EZAActiveCharacterData.kiMultiplier, "12 Ki Multiplier is 140%; 24 Ki Multiplier is 200%; SA Lv.20 raises SA Multiplier by an additional 30%");
   });
 
   it("should be able to extract the KiMultiplier - standard", () => {
-    equal(standardCharacterData.KiMultiplier, '12 Ki Multiplier is 150%; 24 Ki Multiplier is 200%; SA Lv.20 raises SA Multiplier by an additional 30%');
+    equal(standardCharacterData.kiMultiplier, '12 Ki Multiplier is 150%; 24 Ki Multiplier is 200%; SA Lv.20 raises SA Multiplier by an additional 30%');
   });
 
   it("should be able to extract the KiMultiplier - separate details box", () => {
-    equal(separateDetailsBoxData.KiMultiplier, '12 Ki Multiplier is 150%');
+    equal(separateDetailsBoxData.kiMultiplier, '12 Ki Multiplier is 150%');
   });
 });
 
 describe("Tranformations Extraction", function () {
   it("should be able to extract the Transformation - multitransform", () => {
-    equal(multiTransformEZACharacterData.Transformations.length, 4);
+    equal(multiTransformEZACharacterData.transformations.length, 4);
   });
 
   it("should be able to extract the Transformations - transform", () => {
-    equal(transformCharacterData.Transformations.length, 1)
+    equal(transformCharacterData.transformations.length, 1)
   });
 
   it("should be able to extract the Transformations - EZA", () => {
-    equal(EZAActiveCharacterData.Transformations.length, 0);
+    equal(EZAActiveCharacterData.transformations.length, 0);
   });
 
   it("should be able to extract the Transformations - standard", () => {
-    equal(standardCharacterData.Transformations.length, 0);
+    equal(standardCharacterData.transformations.length, 0);
   });
 });
 
 describe("Tranformation Names Extraction", function () {
   it("should be able to extract the Transformation Names - multitransform", () => {
-    equal(multiTransformEZACharacterData.Transformations[0].TransformedName, 'Super Saiyan 2 Goku');
-    equal(multiTransformEZACharacterData.Transformations[1].TransformedName, 'Super Saiyan 3 Goku');
-    equal(multiTransformEZACharacterData.Transformations[2].TransformedName, 'Super Saiyan God Goku');
-    equal(multiTransformEZACharacterData.Transformations[3].TransformedName, 'Super Saiyan God SS Goku');
+    equal(multiTransformEZACharacterData.transformations[0].transformedName, 'Super Saiyan 2 Goku');
+    equal(multiTransformEZACharacterData.transformations[1].transformedName, 'Super Saiyan 3 Goku');
+    equal(multiTransformEZACharacterData.transformations[2].transformedName, 'Super Saiyan God Goku');
+    equal(multiTransformEZACharacterData.transformations[3].transformedName, 'Super Saiyan God SS Goku');
   });
 
   it("should be able to extract the Transformations Names - transform", () => {
-    equal(transformCharacterData.Transformations[0].TransformedName, 'Super Saiyan God SS Goku & Super Saiyan God SS Vegeta')
+    equal(transformCharacterData.transformations[0].transformedName, 'Super Saiyan God SS Goku & Super Saiyan God SS Vegeta')
   });
 });
 
 describe("Tranformation TransformedID Extraction", function () {
   it("should be able to extract the Transformation TransformedID - multitransform", () => {
-    equal(multiTransformEZACharacterData.Transformations[0].TransformedID, '41477');
-    equal(multiTransformEZACharacterData.Transformations[1].TransformedID, '41478');
-    equal(multiTransformEZACharacterData.Transformations[2].TransformedID, '41479');
-    equal(multiTransformEZACharacterData.Transformations[3].TransformedID, '41480');
+    equal(multiTransformEZACharacterData.transformations[0].transformedID, '41477');
+    equal(multiTransformEZACharacterData.transformations[1].transformedID, '41478');
+    equal(multiTransformEZACharacterData.transformations[2].transformedID, '41479');
+    equal(multiTransformEZACharacterData.transformations[3].transformedID, '41480');
   });
 
   it("should be able to extract the Transformations TransformedID - transform", () => {
-    equal(transformCharacterData.Transformations[0].TransformedID, '42239')
+    equal(transformCharacterData.transformations[0].transformedID, '42239')
   });
 });
 
 describe("Tranformation TransformedClass Extraction", function () {
   it("should be able to extract the Transformation TransformedClass - multitransform", () => {
-    equal(multiTransformEZACharacterData.Transformations[0].TransformedClass, 'Super');
-    equal(multiTransformEZACharacterData.Transformations[1].TransformedClass, 'Super');
-    equal(multiTransformEZACharacterData.Transformations[2].TransformedClass, 'Super');
-    equal(multiTransformEZACharacterData.Transformations[3].TransformedClass, 'Super');
+    equal(multiTransformEZACharacterData.transformations[0].transformedClass, 'Super');
+    equal(multiTransformEZACharacterData.transformations[1].transformedClass, 'Super');
+    equal(multiTransformEZACharacterData.transformations[2].transformedClass, 'Super');
+    equal(multiTransformEZACharacterData.transformations[3].transformedClass, 'Super');
   });
 
   it("should be able to extract the Transformations TransformedClass - transform", () => {
-    equal(transformCharacterData.Transformations[0].TransformedClass, 'Super')
+    equal(transformCharacterData.transformations[0].transformedClass, 'Super')
   });
 });
 
 describe("Tranformation TransformedType Extraction", function () {
   it("should be able to extract the Transformation TransformedType - multitransform", () => {
-    equal(multiTransformEZACharacterData.Transformations[0].TransformedType, 'AGL');
-    equal(multiTransformEZACharacterData.Transformations[1].TransformedType, 'AGL');
-    equal(multiTransformEZACharacterData.Transformations[2].TransformedType, 'AGL');
-    equal(multiTransformEZACharacterData.Transformations[3].TransformedType, 'AGL');
+    equal(multiTransformEZACharacterData.transformations[0].transformedType, 'AGL');
+    equal(multiTransformEZACharacterData.transformations[1].transformedType, 'AGL');
+    equal(multiTransformEZACharacterData.transformations[2].transformedType, 'AGL');
+    equal(multiTransformEZACharacterData.transformations[3].transformedType, 'AGL');
   });
 
   it("should be able to extract the Transformations TransformedType - transform", () => {
-    equal(transformCharacterData.Transformations[0].TransformedType, 'TEQ')
+    equal(transformCharacterData.transformations[0].transformedType, 'TEQ')
   });
 });
 
 describe("Tranformation TransformedSuperAttack Extraction", function () {
   it("should be able to extract the Transformation TransformedSuperAttack - multitransform", () => {
-    equal(multiTransformEZACharacterData.Transformations[0].TransformedSuperAttack, 'Raises ATK & DEF[1] and causes immense damage to enemy');
-    equal(multiTransformEZACharacterData.Transformations[1].TransformedSuperAttack, 'Raises ATK & DEF[1] and causes immense damage to enemy');
-    equal(multiTransformEZACharacterData.Transformations[2].TransformedSuperAttack, 'Raises ATK & DEF[1] and causes immense damage to enemy');
-    equal(multiTransformEZACharacterData.Transformations[3].TransformedSuperAttack, 'Causes immense damage with a great chance to stun the enemy[1]');
+    equal(multiTransformEZACharacterData.transformations[0].transformedSuperAttack, 'Raises ATK & DEF[1] and causes immense damage to enemy');
+    equal(multiTransformEZACharacterData.transformations[1].transformedSuperAttack, 'Raises ATK & DEF[1] and causes immense damage to enemy');
+    equal(multiTransformEZACharacterData.transformations[2].transformedSuperAttack, 'Raises ATK & DEF[1] and causes immense damage to enemy');
+    equal(multiTransformEZACharacterData.transformations[3].transformedSuperAttack, 'Causes immense damage with a great chance to stun the enemy[1]');
   });
 
   it("should be able to extract the Transformations TransformedSuperAttack - transform", () => {
-    equal(transformCharacterData.Transformations[0].TransformedSuperAttack, 'Greatly raises ATK & DEF for 1 turn[1] and causes colossal damage to enemy')
+    equal(transformCharacterData.transformations[0].transformedSuperAttack, 'Greatly raises ATK & DEF for 1 turn[1] and causes colossal damage to enemy')
   });
 });
 
 describe("Tranformation TransformedEZASuperAttack Extraction", function () {
   it("should be able to extract the Transformation TransformedEZASuperAttack - multitransform", () => {
-    equal(multiTransformEZACharacterData.Transformations[0].TransformedEZASuperAttack, 'Raises ATK & DEF[1], causes immense damage to enemy and lowers DEF[2]');
-    equal(multiTransformEZACharacterData.Transformations[1].TransformedEZASuperAttack, 'Raises ATK & DEF[1], causes immense damage to enemy and lowers DEF[2]');
-    equal(multiTransformEZACharacterData.Transformations[2].TransformedEZASuperAttack, 'Raises ATK & DEF[1], causes immense damage to enemy and lowers DEF[2]');
-    equal(multiTransformEZACharacterData.Transformations[3].TransformedEZASuperAttack, 'Raises ATK & DEF for 1 turn[2] and causes immense damage with a great chance of stunning the enemy[1]');
+    equal(multiTransformEZACharacterData.transformations[0].transformedEZASuperAttack, 'Raises ATK & DEF[1], causes immense damage to enemy and lowers DEF[2]');
+    equal(multiTransformEZACharacterData.transformations[1].transformedEZASuperAttack, 'Raises ATK & DEF[1], causes immense damage to enemy and lowers DEF[2]');
+    equal(multiTransformEZACharacterData.transformations[2].transformedEZASuperAttack, 'Raises ATK & DEF[1], causes immense damage to enemy and lowers DEF[2]');
+    equal(multiTransformEZACharacterData.transformations[3].transformedEZASuperAttack, 'Raises ATK & DEF for 1 turn[2] and causes immense damage with a great chance of stunning the enemy[1]');
   });
 
   it("should be able to extract the Transformations TransformedEZASuperAttack - transform", () => {
-    equal(transformCharacterData.Transformations[0].TransformedEZASuperAttack, undefined)
+    equal(transformCharacterData.transformations[0].transformedEZASuperAttack, undefined)
   });
 });
 
 describe("Tranformation TransformedUltraSuperAttack Extraction", function () {
   it("should be able to extract the Transformation TransformedUltraSuperAttack - multitransform", () => {
-    equal(multiTransformEZACharacterData.Transformations[0].TransformedUltraSuperAttack, undefined);
-    equal(multiTransformEZACharacterData.Transformations[1].TransformedUltraSuperAttack, undefined);
-    equal(multiTransformEZACharacterData.Transformations[2].TransformedUltraSuperAttack, undefined);
-    equal(multiTransformEZACharacterData.Transformations[3].TransformedUltraSuperAttack, undefined);
+    equal(multiTransformEZACharacterData.transformations[0].transformedUltraSuperAttack, undefined);
+    equal(multiTransformEZACharacterData.transformations[1].transformedUltraSuperAttack, undefined);
+    equal(multiTransformEZACharacterData.transformations[2].transformedUltraSuperAttack, undefined);
+    equal(multiTransformEZACharacterData.transformations[3].transformedUltraSuperAttack, undefined);
   });
 
   it("should be able to extract the Transformations TransformedUltraSuperAttack - transform", () => {
-    equal(transformCharacterData.Transformations[0].TransformedUltraSuperAttack, "Massively raises ATK & DEF for 1 turn[2] and causes mega-colossal damage to enemy; disables enemy's action once within the turn")
+    equal(transformCharacterData.transformations[0].transformedUltraSuperAttack, "Massively raises ATK & DEF for 1 turn[2] and causes mega-colossal damage to enemy; disables enemy's action once within the turn")
   });
 });
 
 describe("Tranformation TransformedUltraSuperAttack Extraction", function () {
   it("should be able to extract the Transformation TransformedUltraSuperAttack - multitransform", () => {
-    equal(multiTransformEZACharacterData.Transformations[0].TransformedUltraSuperAttack, undefined);
-    equal(multiTransformEZACharacterData.Transformations[1].TransformedUltraSuperAttack, undefined);
-    equal(multiTransformEZACharacterData.Transformations[2].TransformedUltraSuperAttack, undefined);
-    equal(multiTransformEZACharacterData.Transformations[3].TransformedUltraSuperAttack, undefined);
+    equal(multiTransformEZACharacterData.transformations[0].transformedUltraSuperAttack, undefined);
+    equal(multiTransformEZACharacterData.transformations[1].transformedUltraSuperAttack, undefined);
+    equal(multiTransformEZACharacterData.transformations[2].transformedUltraSuperAttack, undefined);
+    equal(multiTransformEZACharacterData.transformations[3].transformedUltraSuperAttack, undefined);
   });
 
   it("should be able to extract the Transformations TransformedUltraSuperAttack - transform", () => {
-    equal(transformCharacterData.Transformations[0].TransformedUltraSuperAttack, "Massively raises ATK & DEF for 1 turn[2] and causes mega-colossal damage to enemy; disables enemy's action once within the turn")
+    equal(transformCharacterData.transformations[0].transformedUltraSuperAttack, "Massively raises ATK & DEF for 1 turn[2] and causes mega-colossal damage to enemy; disables enemy's action once within the turn")
   });
 });
 
 describe("Tranformation TransformedEZAUltraSuperAttack Extraction", function () {
   it("should be able to extract the Transformations TransformedEZAUltraSuperAttack - transform", () => {
-    equal(transformCharacterData.Transformations[0].TransformedEZAUltraSuperAttack, undefined)
+    equal(transformCharacterData.transformations[0].transformedEZAUltraSuperAttack, undefined)
   });
   it("should be able to extract the Transformations TransformedEZAUltraSuperAttack - transform", () => {
-    equal(transformEZALRCharacterData.Transformations[0].TransformedEZAUltraSuperAttack, "Greatly raises DEF for 1 turn[3], causes mega-colossal damage to enemy and greatly lowers ATK & DEF[4]")
+    equal(transformEZALRCharacterData.transformations[0].transformedEZAUltraSuperAttack, "Greatly raises DEF for 1 turn[3], causes mega-colossal damage to enemy and greatly lowers ATK & DEF[4]")
   });
 });
 
 describe("Tranformation TransformedPassive Extraction", function () {
   it("should be able to extract the Transformation TransformedPassive - multitransform", () => {
-    equal(multiTransformEZACharacterData.Transformations[0].TransformedPassive, "ATK +90% and DEF +60%; reduces damage received by 22%; Transform when conditions are met");
-    equal(multiTransformEZACharacterData.Transformations[1].TransformedPassive, "ATK +100% and DEF +40%; reduces damage received by 23%; Transform when conditions are met");
-    equal(multiTransformEZACharacterData.Transformations[2].TransformedPassive, "ATK +110% and DEF +20%; reduces damage received by 24%; Transform when conditions are met");
-    equal(multiTransformEZACharacterData.Transformations[3].TransformedPassive, "ATK +120%; reduces damage received by 25%; Ki +12 and performs a critical hit (once only)");
+    equal(multiTransformEZACharacterData.transformations[0].transformedPassive, "ATK +90% and DEF +60%; reduces damage received by 22%; Transform when conditions are met");
+    equal(multiTransformEZACharacterData.transformations[1].transformedPassive, "ATK +100% and DEF +40%; reduces damage received by 23%; Transform when conditions are met");
+    equal(multiTransformEZACharacterData.transformations[2].transformedPassive, "ATK +110% and DEF +20%; reduces damage received by 24%; Transform when conditions are met");
+    equal(multiTransformEZACharacterData.transformations[3].transformedPassive, "ATK +120%; reduces damage received by 25%; Ki +12 and performs a critical hit (once only)");
   });
 
   it("should be able to extract the Transformations TransformedPassive - transform", () => {
-    equal(transformCharacterData.Transformations[0].TransformedPassive, "ATK & DEF +177%; plus an additional Ki +2 per Type Ki Sphere obtained; chance of performing a critical hit and chance of evading enemy's attack (including Super Attack) +7% per  Ki Sphere obtained; attacks effective against all types when Ki is 16 or more; launches an additional Super Attack when Ki is 20 or more; medium chance[3] of performing a critical hit; medium chance[4] of evading enemy's attack (including Super Attack)")
+    equal(transformCharacterData.transformations[0].transformedPassive, "ATK & DEF +177%; plus an additional Ki +2 per Type Ki Sphere obtained; chance of performing a critical hit and chance of evading enemy's attack (including Super Attack) +7% per  Ki Sphere obtained; attacks effective against all types when Ki is 16 or more; launches an additional Super Attack when Ki is 20 or more; medium chance[3] of performing a critical hit; medium chance[4] of evading enemy's attack (including Super Attack)")
   });
 });
 
 describe("Tranformation TransformedEZAPassive Extraction", function () {
   it("should be able to extract the Transformation TransformedEZAPassive - multitransform", () => {
-    equal(multiTransformEZACharacterData.Transformations[0].TransformedEZAPassive, "ATK & DEF +120%; Ki +3 plus an additional ATK +20% and DEF +30% when attacking Extreme Class enemies; reduces damage received by 22%; Transforms when conditions are met");
-    equal(multiTransformEZACharacterData.Transformations[1].TransformedEZAPassive, "ATK & DEF +130%; Ki +3 plus an additional ATK +30% and DEF +20% when attacking Extreme Class enemies; reduces damage received by 23%; Transforms when conditions are met");
-    equal(multiTransformEZACharacterData.Transformations[2].TransformedEZAPassive, "ATK & DEF +140%; Ki +3 plus an additional ATK +40% and DEF +10% when attacking Extreme Class enemies; reduces damage received by 24%; Transforms when conditions are met");
-    equal(multiTransformEZACharacterData.Transformations[3].TransformedEZAPassive, "ATK & DEF +150%; Ki +3 plus an additional ATK +50% when attacking Extreme Class enemies; reduces damage received by 25%; Ki +12 and performs a critical hit (once only)");
+    equal(multiTransformEZACharacterData.transformations[0].transformedEZAPassive, "ATK & DEF +120%; Ki +3 plus an additional ATK +20% and DEF +30% when attacking Extreme Class enemies; reduces damage received by 22%; Transforms when conditions are met");
+    equal(multiTransformEZACharacterData.transformations[1].transformedEZAPassive, "ATK & DEF +130%; Ki +3 plus an additional ATK +30% and DEF +20% when attacking Extreme Class enemies; reduces damage received by 23%; Transforms when conditions are met");
+    equal(multiTransformEZACharacterData.transformations[2].transformedEZAPassive, "ATK & DEF +140%; Ki +3 plus an additional ATK +40% and DEF +10% when attacking Extreme Class enemies; reduces damage received by 24%; Transforms when conditions are met");
+    equal(multiTransformEZACharacterData.transformations[3].transformedEZAPassive, "ATK & DEF +150%; Ki +3 plus an additional ATK +50% when attacking Extreme Class enemies; reduces damage received by 25%; Ki +12 and performs a critical hit (once only)");
   });
 
   it("should be able to extract the Transformations TransformedEZAPassive - transform", () => {
-    equal(transformCharacterData.Transformations[0].TransformedEZAPassive, undefined)
+    equal(transformCharacterData.transformations[0].transformedEZAPassive, undefined)
   });
 });
 
 describe("Tranformation TransformedActiveSkill Extraction", function () {
   it("should be able to extract the Transformation TransformedActiveSkill - multitransform", () => {
-    equal(multiTransformEZACharacterData.Transformations[0].TransformedActiveSkill, undefined);
-    equal(multiTransformEZACharacterData.Transformations[1].TransformedActiveSkill, undefined);
-    equal(multiTransformEZACharacterData.Transformations[2].TransformedActiveSkill, undefined);
-    equal(multiTransformEZACharacterData.Transformations[3].TransformedActiveSkill, undefined);
+    equal(multiTransformEZACharacterData.transformations[0].transformedActiveSkill, undefined);
+    equal(multiTransformEZACharacterData.transformations[1].transformedActiveSkill, undefined);
+    equal(multiTransformEZACharacterData.transformations[2].transformedActiveSkill, undefined);
+    equal(multiTransformEZACharacterData.transformations[3].transformedActiveSkill, undefined);
   });
 
   it("should be able to extract the Transformations TransformedActiveSkill - transform", () => {
-    equal(transformCharacterData.Transformations[0].TransformedActiveSkill, "Causes ultimate damage to enemy and within the turn activated, all attack become critical hits")
+    equal(transformCharacterData.transformations[0].transformedActiveSkill, "Causes ultimate damage to enemy and within the turn activated, all attack become critical hits")
   });
 });
 
 describe("Tranformation TransformedActiveSkillCondition Extraction", function () {
   it("should be able to extract the Transformation TransformedActiveSkillCondition - multitransform", () => {
-    equal(multiTransformEZACharacterData.Transformations[0].TransformedActiveSkillCondition, undefined);
-    equal(multiTransformEZACharacterData.Transformations[1].TransformedActiveSkillCondition, undefined);
-    equal(multiTransformEZACharacterData.Transformations[2].TransformedActiveSkillCondition, undefined);
-    equal(multiTransformEZACharacterData.Transformations[3].TransformedActiveSkillCondition, undefined);
+    equal(multiTransformEZACharacterData.transformations[0].transformedActiveSkillCondition, undefined);
+    equal(multiTransformEZACharacterData.transformations[1].transformedActiveSkillCondition, undefined);
+    equal(multiTransformEZACharacterData.transformations[2].transformedActiveSkillCondition, undefined);
+    equal(multiTransformEZACharacterData.transformations[3].transformedActiveSkillCondition, undefined);
   });
 
   it("should be able to extract the Transformations TransformedActiveSkillCondition - transform", () => {
-    equal(transformCharacterData.Transformations[0].TransformedActiveSkillCondition, "Can be activated when HP is 50% or less or when facing only 1 enemy, whose HP is 50% or less (once only)")
+    equal(transformCharacterData.transformations[0].transformedActiveSkillCondition, "Can be activated when HP is 50% or less or when facing only 1 enemy, whose HP is 50% or less (once only)")
   });
 });
 
@@ -932,26 +932,26 @@ describe("Tranformation TransformedActiveSkillCondition Extraction", function ()
 
 describe("Tranformation TransformedLinks Extraction", function () {
   it("should be able to extract the Transformation TransformedLinks - multitransform", () => {
-    deepEqual(multiTransformEZACharacterData.Transformations[0].TransformedLinks, ['All in the Family','Golden Warrior','Super Saiyan','Experienced Fighters','Kamehameha','Prepared for Battle','Fierce Battle']);
-    deepEqual(multiTransformEZACharacterData.Transformations[1].TransformedLinks, ['Limit-Breaking Form','Golden Warrior','Super Saiyan','Experienced Fighters','Kamehameha','Over in a Flash','Fierce Battle']);
-    deepEqual(multiTransformEZACharacterData.Transformations[2].TransformedLinks, ['Godly Power','Warrior Gods','Super Saiyan','Shocking Speed','All in the Family','Over in a Flash','Fierce Battle']);
-    deepEqual(multiTransformEZACharacterData.Transformations[3].TransformedLinks, ['Godly Power', 'Warrior Gods','Super Saiyan', 'Shocking Speed', 'All in the Family', 'Over in a Flash', 'Fierce Battle']);
+    deepEqual(multiTransformEZACharacterData.transformations[0].transformedLinks, ['All in the Family','Golden Warrior','Super Saiyan','Experienced Fighters','Kamehameha','Prepared for Battle','Fierce Battle']);
+    deepEqual(multiTransformEZACharacterData.transformations[1].transformedLinks, ['Limit-Breaking Form','Golden Warrior','Super Saiyan','Experienced Fighters','Kamehameha','Over in a Flash','Fierce Battle']);
+    deepEqual(multiTransformEZACharacterData.transformations[2].transformedLinks, ['Godly Power','Warrior Gods','Super Saiyan','Shocking Speed','All in the Family','Over in a Flash','Fierce Battle']);
+    deepEqual(multiTransformEZACharacterData.transformations[3].transformedLinks, ['Godly Power', 'Warrior Gods','Super Saiyan', 'Shocking Speed', 'All in the Family', 'Over in a Flash', 'Fierce Battle']);
   });
 
   it("should be able to extract the Transformations TransformedLinks - transform", () => {
-    deepEqual(transformCharacterData.Transformations[0].TransformedLinks, ['Super Saiyan','Kamehameha','Warrior Gods','Godly Power','Prepared for Battle','Fierce Battle','Legendary Power'])
+    deepEqual(transformCharacterData.transformations[0].transformedLinks, ['Super Saiyan','Kamehameha','Warrior Gods','Godly Power','Prepared for Battle','Fierce Battle','Legendary Power'])
   });
 });
 
 describe("Tranformation TransformedLinks Extraction", function () {
   it("should be able to extract the Transformation TransformedLinks - multitransform", () => {
-    deepEqual(multiTransformEZACharacterData.Transformations[0].TransformedLinks, ['All in the Family','Golden Warrior','Super Saiyan','Experienced Fighters','Kamehameha','Prepared for Battle','Fierce Battle']);
-    deepEqual(multiTransformEZACharacterData.Transformations[1].TransformedLinks, ['Limit-Breaking Form','Golden Warrior','Super Saiyan','Experienced Fighters','Kamehameha','Over in a Flash','Fierce Battle']);
-    deepEqual(multiTransformEZACharacterData.Transformations[2].TransformedLinks, ['Godly Power','Warrior Gods','Super Saiyan','Shocking Speed','All in the Family','Over in a Flash','Fierce Battle']);
-    deepEqual(multiTransformEZACharacterData.Transformations[3].TransformedLinks, ['Godly Power', 'Warrior Gods','Super Saiyan', 'Shocking Speed', 'All in the Family', 'Over in a Flash', 'Fierce Battle']);
+    deepEqual(multiTransformEZACharacterData.transformations[0].transformedLinks, ['All in the Family','Golden Warrior','Super Saiyan','Experienced Fighters','Kamehameha','Prepared for Battle','Fierce Battle']);
+    deepEqual(multiTransformEZACharacterData.transformations[1].transformedLinks, ['Limit-Breaking Form','Golden Warrior','Super Saiyan','Experienced Fighters','Kamehameha','Over in a Flash','Fierce Battle']);
+    deepEqual(multiTransformEZACharacterData.transformations[2].transformedLinks, ['Godly Power','Warrior Gods','Super Saiyan','Shocking Speed','All in the Family','Over in a Flash','Fierce Battle']);
+    deepEqual(multiTransformEZACharacterData.transformations[3].transformedLinks, ['Godly Power', 'Warrior Gods','Super Saiyan', 'Shocking Speed', 'All in the Family', 'Over in a Flash', 'Fierce Battle']);
   });
 
   it("should be able to extract the Transformations TransformedLinks - transform", () => {
-    deepEqual(transformCharacterData.Transformations[0].TransformedLinks, ['Super Saiyan','Kamehameha','Warrior Gods','Godly Power','Prepared for Battle','Fierce Battle','Legendary Power'])
+    deepEqual(transformCharacterData.transformations[0].transformedLinks, ['Super Saiyan','Kamehameha','Warrior Gods','Godly Power','Prepared for Battle','Fierce Battle','Legendary Power'])
   });
 });
