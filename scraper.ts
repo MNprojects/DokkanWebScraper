@@ -3,8 +3,8 @@ import axios, { AxiosError } from 'axios';
 import { JSDOM } from 'jsdom';
 import { Character, Rarities, Classes, Types, Transformation } from "./character";
 
-export async function getDokkanData() {
-    const document: Document = await fetchFromWeb('https://dbz-dokkanbattle.fandom.com/wiki/Category:LR');
+export async function getDokkanData(rarity: string) {
+    const document: Document = await fetchFromWeb('https://dbz-dokkanbattle.fandom.com/wiki/Category:' + rarity);
     const links: string[] = extractLinks(document);
 
     const charactersData = await Promise.all(links.map(async link => {
