@@ -208,6 +208,10 @@ describe("ImageURL Extraction", function () {
     equal(transformCharacterData.imageURL, "https://static.wikia.nocookie.net/dbz-dokkanbattle/images/7/75/Card_1022380_thumb_apng.png/revision/latest?cb=20220130071219&format=original");
   });
 
+  it("should be able to extract the transformedImageURL - transform", () => {
+    equal(transformCharacterData.transformations[0].transformedImageURL, "https://static.wikia.nocookie.net/dbz-dokkanbattle/images/b/b4/Card_4022390_thumb_apng.png/revision/latest?cb=20220130071254&format=original");
+  });
+
   it("should be able to extract the ImageURL - EZA", () => {
     equal(EZAActiveCharacterData.imageURL, "https://vignette.wikia.nocookie.net/dbz-dokkanbattle/images/3/35/Card_1015910_thumb_apng.png/revision/latest?cb=20190128070309&format=original");
   });
