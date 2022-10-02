@@ -204,6 +204,13 @@ describe("ImageURL Extraction", function () {
     equal(multiTransformEZACharacterData.imageURL, "https://static.wikia.nocookie.net/dbz-dokkanbattle/images/2/23/Card_1014760_thumb.png/revision/latest?cb=20180827182222");
   });
 
+  it("should be able to extract the transformedImageURL - multitransform", () => {
+    equal(multiTransformEZACharacterData.transformations[0].transformedImageURL, "https://static.wikia.nocookie.net/dbz-dokkanbattle/images/4/49/Card_4014770_thumb.png/revision/latest?cb=20181017022011");
+    equal(multiTransformEZACharacterData.transformations[1].transformedImageURL, "https://static.wikia.nocookie.net/dbz-dokkanbattle/images/0/01/Card_4014780_thumb.png/revision/latest?cb=20181017022642");
+    equal(multiTransformEZACharacterData.transformations[2].transformedImageURL, "https://static.wikia.nocookie.net/dbz-dokkanbattle/images/5/56/Card_4014790_thumb.png/revision/latest?cb=20181017022642");
+    equal(multiTransformEZACharacterData.transformations[3].transformedImageURL, "https://static.wikia.nocookie.net/dbz-dokkanbattle/images/5/55/Card_4014800_thumb.png/revision/latest?cb=20181017022642");
+  });
+
   it("should be able to extract the ImageURL - transform", () => {
     equal(transformCharacterData.imageURL, "https://static.wikia.nocookie.net/dbz-dokkanbattle/images/7/75/Card_1022380_thumb_apng.png/revision/latest?cb=20220130071219&format=original");
   });
