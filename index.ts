@@ -18,7 +18,7 @@ async function saveDokkanResults() {
     let data = LRData.concat(URData, URData2, URData3, URData4);
     let currentDate = new Date();
     let day = ("0" + currentDate.getUTCDate()).slice(-2);
-    let month = ("0" + currentDate.getUTCMonth()).slice(-2);
+    let month = ("0" + currentDate.getUTCMonth() + 1).slice(-2);
     let year = currentDate.getUTCFullYear()
     saveData(year + month + day + 'DokkanCharacterData', data)
 }
