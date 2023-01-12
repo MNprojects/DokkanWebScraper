@@ -6,7 +6,8 @@
     "build": "tsc",
     "watch": "tsc -w",
     "prestart": "npm run build",
-    "test": "mocha"
+    "test": "mocha",
+    "run": "npx ts-node index.ts"
   },
   "dependencies": {
     "axios": "^0.27.2",
