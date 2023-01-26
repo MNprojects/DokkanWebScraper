@@ -487,7 +487,7 @@ describe("Categories Extraction", function () {
   });
 
   it("should be able to extract the Categories - transform", () => {
-    deepEqual(transformCharacterData.categories, ['Fusion','Realm of Gods','Pure Saiyans','Transformation Boost','Joined Forces','Movie Heroes','Kamehameha','Final Trump Card','Time Limit','Mastered Evolution','Power Beyond Super Saiyan','Fused Fighters','Bond of Parent and Child'])
+    deepEqual(transformCharacterData.categories, ['Fusion','Realm of Gods','Pure Saiyans','Transformation Boost','Joined Forces','Movie Heroes','Kamehameha','Final Trump Card','Time Limit','Mastered Evolution','Power Beyond Super Saiyan','Fused Fighters','Bond of Parent and Child', 'Super Heroes'])
   });
 
   it("should be able to extract the Categories - EZA", () => {
@@ -921,7 +921,7 @@ describe("Tranformation TransformedActiveSkill Extraction", function () {
   });
 
   it("should be able to extract the Transformations TransformedActiveSkill - transform", () => {
-    equal(transformCharacterData.transformations[0].transformedActiveSkill, "Causes ultimate damage to enemy and within the turn activated, all attack become critical hits")
+    equal(transformCharacterData.transformations[0].transformedActiveSkill, "Causes ultimate damage to enemy and, within the turn activated, all attacks become critical hits")
   });
 });
 
