@@ -3,7 +3,7 @@ import { writeFile } from "fs/promises";
 import { resolve } from "path";
 import { getDokkanData } from "./scraper";
 
-async function saveDokkanResults() {
+export async function saveDokkanResults() {
     console.log('Starting scrape');
     const URData = await getDokkanData('UR');
     console.log('First set done');
