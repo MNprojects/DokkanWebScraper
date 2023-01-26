@@ -2,12 +2,21 @@
   "name": "dokkan-web-scraper",
   "version": "1.0.0",
   "description": "",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
     "prestart": "npm run build",
     "test": "mocha",
     "run": "npx ts-node index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MNprojects/DokkanWebScraper.git"
   },
   "dependencies": {
     "axios": "^0.27.2",
