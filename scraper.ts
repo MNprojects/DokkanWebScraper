@@ -29,7 +29,6 @@ export async function fetchFromWeb(url: string) {
     const HTMLData = await fetchPage(url);
     const dom = new JSDOM(HTMLData);
     return dom.window.document;
-
 }
 
 function extractLinks(document: Document) {
@@ -113,4 +112,3 @@ function extractTransformedCharacterData(characterDocument: Document): Transform
     }
     return transformedArray
 }
-
